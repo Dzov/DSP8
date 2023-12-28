@@ -8,7 +8,7 @@ import numpy as np
 
 api = FastAPI()
 
-data_path = os.path.join('api/data', 'displayable_client_info.csv')
+data_path = os.path.join('data', 'displayable_client_info.csv')
 data = pd.read_csv(data_path)
 data.drop(columns='Unnamed: 0', inplace=True)
 data['SK_ID_CURR'] = data['SK_ID_CURR'].astype(int)
@@ -38,7 +38,7 @@ class Client(BaseModel):
 
 
 def get_model():
-    lgbm = open('api/model/model.pkl', 'rb')
+    lgbm = open('model/model.pkl', 'rb')
     return pickle.load(lgbm)
 
 
@@ -71,7 +71,7 @@ def get_client_ids():
     return data.SK_ID_CURR.to_list()
 
 def predict_loan_eligibility(client_id: int):
-    data_path = os.path.join('api/data', 'sample_client_data.csv')
+    data_path = os.path.join('data', 'sample_client_data.csv')
     data = pd.read_csv(data_path)
     data.drop(columns='Unnamed: 0', inplace=True)
 
