@@ -3,3 +3,5 @@
 api/__pycache__
 api/.pytest_cache
 !api/data
+
+dashboard/__pycache__

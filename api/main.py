@@ -11,7 +11,6 @@ api = FastAPI()
 data_path = os.path.join('data', 'displayable_client_info.csv')
 data = pd.read_csv(data_path)
 data.drop(columns='Unnamed: 0', inplace=True)
-data['SK_ID_CURR'] = data['SK_ID_CURR'].astype(int)
 
 
 class BodyItem(BaseModel):
