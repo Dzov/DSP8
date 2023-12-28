@@ -1,4 +1,5 @@
 import pandas as pd
+from pandas.testing import assert_frame_equal
 import os
 import json
 import numpy as np
@@ -7,7 +8,8 @@ from .. import main
 
 client = TestClient(main.api)
 
-data = pd.read_csv(os.path.join('data', 'sample_client_data.csv'))
+data = pd.read_csv(os.path.join('data', 'displayable_client_info.csv'))
+data['SK_ID_CURR'] = data['SK_ID_CURR'].astype(int)
 data.drop(columns='Unnamed: 0', inplace=True)
 
 def get_client_id():
@@ -46,4 +48,4 @@ def test_get_client_information():
     client_id = get_client_id()
     actual_client_info = main.get_client_information(client_id)
     expected_client_info = data[data.SK_ID_CURR == int(client_id)]
-    assert np.array_equal(actual_client_info,  expected_client_info.values)
+    assert_frame_equal(actual_client_info,  expected_client_info)
