@@ -1,6 +1,6 @@
 import requests
 
-url = "http://127.0.0.1:8000"
+url = "https://pret-a-depenser.azurewebsites.net"
 
 def get_prediction(client_id):
     print(f"hello{client_id}")
