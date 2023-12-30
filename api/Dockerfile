@@ -7,7 +7,8 @@ COPY ./requirements.txt /api/requirements.txt
 COPY ./main.py /api/main.py 
 COPY ./model/model.pkl /api/model/model.pkl 
 COPY ./data/sample_client_data.csv /api/data/sample_client_data.csv
-COPY ./data/displayable_client_info.csv /api/data/displayable_client_info.csv
+COPY ./data/client_profiles.csv /api/data/client_profiles.csv
+COPY ./data/sample_historical_data.csv /api/data/sample_historical_data.csv
 
 RUN pip install --no-cache-dir --upgrade -r /api/requirements.txt
 
