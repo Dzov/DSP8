@@ -20,6 +20,10 @@ def get_client_info(client_id):
     return requests.get(f"{url}/clients/{client_id}").json()
 
 
+def get_all_features():
+    return requests.get(f"{url}/features").json()
+
+
 def get_client_neighbours(client_id):
     response = requests.get(f"{url}/clients/{client_id}/neighbours").json()
     client_data = pd.DataFrame.from_dict(json.loads(response['client_data']))

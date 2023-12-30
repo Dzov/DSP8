@@ -6,9 +6,11 @@ import functions as fn
 import shap
 import plotly.graph_objs as go
 import numpy as np
+from plotly.subplots import make_subplots
 import matplotlib.pyplot as plt
 
-app = Dash(__name__, external_stylesheets=[dbc.themes.MINTY])
+app = Dash(__name__, suppress_callback_exceptions=True,
+           external_stylesheets=[dbc.themes.MINTY])
 
 ############################################################################################
 ##################                       COMPONENTS                     ####################
@@ -62,11 +64,10 @@ def get_global_importance():
     return html.Iframe(srcDoc=fig.to_html(), style={"width": "100%", "height": "500px"})
 
 
-def build_comparison_graphs(client_id, mean=True):
+def bar_comparison(client_id):
     client_data, neighbours_data = fn.get_client_neighbours(client_id)
-    print(mean)
-    if mean:
-        neighbours_data = pd.DataFrame(neighbours_data.mean()).transpose()
+
+    neighbours_data = pd.DataFrame(neighbours_data.mean()).transpose()
     df = pd.concat([client_data, neighbours_data], keys=[
         "Client", "Neighbours"])
     fig = go.Figure()
@@ -88,7 +89,26 @@ def build_comparison_graphs(client_id, mean=True):
     return html.Iframe(srcDoc=fig.to_html(), style={"width": "100%", "height": "500px"})
 
 
-def build_client_panel(client_info, prediction, compare_mean=False):
+def build_comparison_graphs(client_id, selected_features):
+    client_data, neighbours_data = fn.get_client_neighbours(client_id)
+    fig = make_subplots(rows=len(selected_features), cols=1,
+                        subplot_titles=selected_features)
+
+    for i, feature in enumerate(selected_features, start=1):
+        client_value = client_data[feature].values[0]
+        neighbours_values = neighbours_data[feature]
+
+        fig.add_trace(go.Histogram(x=neighbours_values, histnorm='probability density',
+                      name=f'{feature} - Neighbours'), row=i, col=1)
+
+        fig.add_shape(type="line", x0=client_value, y0=0, x1=client_value,
+                      y1=1, line=dict(color="#FFA88F",), row=i, col=1)
+
+    fig.update_layout(height=400 * len(selected_features), showlegend=False)
+    return html.Iframe(srcDoc=fig.to_html(), style={"width": "100%", "height": "500px"})
+
+
+def build_client_panel(client_info, prediction):
     general = dbc.Card([
         dbc.CardHeader(f"General Information: "),
         dbc.CardBody(
@@ -190,9 +210,22 @@ def build_client_panel(client_info, prediction, compare_mean=False):
         ),
         dbc.Row(
             [
-                dbc.Col(html.H2("Neighbours Comparison"), width=6,
+                dbc.Col(html.H3("Distribution comparison with 20 nearest neighbours"), width=6,
                         className="offset-3 text-center"),
-                dbc.Col(html.Div([build_comparison_graphs(client_info['clientId']),]), width=12),
+                dbc.Col(
+                    dcc.Dropdown(
+                        id='feature-dropdown',
+                        options=[{'label': feature, 'value': feature}
+                                 for feature in fn.get_all_features()],
+                        multi=True,
+                        value=['CREDIT_INCOME_PERCENT'],
+                        placeholder="Select features to compare"
+                    )
+                ),
+                dbc.Col(html.Div(id='comparison-graphs'), width=12),
+                dbc.Col(html.H3("Comparison to mean values of 20 nearest neighbours"), width=6,
+                        className="offset-3 text-center"),
+                dbc.Col(html.Div(bar_comparison(client_info['clientId'])), width=12),
             ],
             className="mb-4",
         ),
@@ -226,6 +259,17 @@ def get_client_info(client_id):
     client_prediction = fn.get_prediction(client_id)
 
     return build_client_panel(client_info, client_prediction)
+
+
+@app.callback(
+    Output('comparison-graphs', 'children'),
+    [Input('client-dropdown', 'value'),
+     Input('feature-dropdown', 'value')]
+)
+def update_comparison_graphs(client_id, selected_features):
+    if client_id is None or not selected_features:
+        return html.Div()
+    return build_comparison_graphs(client_id, selected_features)
 
 
 if __name__ == '__main__':
