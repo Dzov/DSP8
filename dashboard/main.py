@@ -3,11 +3,92 @@ import dash_bootstrap_components as dbc
 import plotly.express as px
 import pandas as pd
 import functions as fn
+import shap
+import plotly.graph_objs as go
+import numpy as np
+import matplotlib.pyplot as plt
 
 app = Dash(__name__, external_stylesheets=[dbc.themes.MINTY])
 
+############################################################################################
+##################                       COMPONENTS                     ####################
+############################################################################################
 
-def build_client_panel(client_info, prediction):
+navbar = dbc.Navbar(
+    dbc.Container(
+        [dbc.Col(html.Img(src=app.get_relative_path('/assets/logo.png'), height="70px"), md=10),
+         dbc.Col(dcc.Dropdown(fn.get_clients(), placeholder='Select a client',
+                              id='client-dropdown', style={'width': '100%'})),
+
+         ]
+    ),
+    color="primary",
+    dark=True,
+)
+
+placeholder = dbc.Container(
+    dbc.Row(
+        [
+            dbc.Col(html.H1("Client Profile"), width=6,
+                    className="offset-3 text-center"),
+            dbc.Col(html.P(
+                "Select a client ID from the dropdown menu to display information",
+                className="lead",
+            ), width=6, className="offset-3 text-center"),
+        ]
+    ),
+    style={'margin-top': '20px'}
+)
+
+
+def get_client_feature_importance(client_id):
+    expected_values, features, shap_values = fn.get_client_feature_importance(
+        client_id)
+
+    force_plot = shap.force_plot(expected_values[1], shap_values[1], features)
+    force_plot_html = f"<head>{shap.getjs()}</head><body>{force_plot.html()}</body>"
+
+    return html.Iframe(srcDoc=force_plot_html, style={"width": "100%"})
+
+
+def get_global_importance():
+    df = fn.get_global_feature_importance().transpose().reset_index()
+    df.columns = ['Feature', 'Importance']
+    df_plot = df.sort_values(by='Importance', ascending=True)
+
+    fig = px.bar(df_plot, x='Importance', y='Feature', orientation='h',
+                 labels={'Importance': 'Feature Importance'})
+
+    return html.Iframe(srcDoc=fig.to_html(), style={"width": "100%", "height": "500px"})
+
+
+def build_comparison_graphs(client_id, mean=True):
+    client_data, neighbours_data = fn.get_client_neighbours(client_id)
+    print(mean)
+    if mean:
+        neighbours_data = pd.DataFrame(neighbours_data.mean()).transpose()
+    df = pd.concat([client_data, neighbours_data], keys=[
+        "Client", "Neighbours"])
+    fig = go.Figure()
+    for feature in df.columns:
+        fig.add_trace(go.Bar(
+            x=df.index.get_level_values(0),
+            y=df[feature],
+            name=feature,
+        ))
+
+    fig.update_traces(marker=dict(
+        color=['#FFA88F' if index[0] == 'Client' else '#A1D8E4' for index in df.index]))
+
+    fig.update_layout(barmode='group',
+                      yaxis=dict(title='Feature Value'),
+                      xaxis=dict(title='Comparison'),
+                      showlegend=True)
+
+    return html.Iframe(srcDoc=fig.to_html(), style={"width": "100%", "height": "500px"})
+
+
+def build_client_panel(client_info, prediction, compare_mean=False):
     general = dbc.Card([
         dbc.CardHeader(f"General Information: "),
         dbc.CardBody(
@@ -44,7 +125,7 @@ def build_client_panel(client_info, prediction):
                     className="card-text",
                 ),
                 html.P(
-                    [html.Strong("Work Seniority:"),
+                    [html.Strong("Years Employed:"),
                      f" {client_info['workSeniority']}"],
                     className="card-text",
                 ),
@@ -66,7 +147,7 @@ def build_client_panel(client_info, prediction):
         dbc.CardBody(
             [
                     html.P(
-                        [html.Strong("Score: "), f" {prediction['probability'][0]} ", dbc.Badge(
+                        [html.Strong("Score: "), f" {prediction['probability'][0]}  ", dbc.Badge(
                             "Granted", color="success", className="me-1") if prediction['prediction'][0] == 0 else dbc.Badge("Denied", color="danger", className="me-1")],
                         className="card-text",
                     ),
@@ -74,13 +155,49 @@ def build_client_panel(client_info, prediction):
                     ]
         )], color="info",  outline=True)
 
-    return dbc.Row(
-        [
-            dbc.Col(dbc.Card(general, color="primary", outline=True)),
-            dbc.Col(dbc.Card(financial, color="secondary", outline=True)),
-            dbc.Col(dbc.Card(loan, color="info", outline=True)),
-        ],
-        className="mb-4",
+    return dbc.Container([
+        dbc.Row(
+            [
+                dbc.Col(html.H1("Client Profile"), width=6,
+                        className="offset-3 text-center"),
+            ], style={'margin-bottom': '20px'}
+        ),
+        dbc.Row(
+            [
+                dbc.Col(dbc.Card(general, color="primary", outline=True)),
+                dbc.Col(dbc.Card(financial, color="secondary", outline=True)),
+                dbc.Col(dbc.Card(loan, color="info", outline=True),  width=2),
+            ],
+            className="mb-4",
+        ),
+        dbc.Row(
+            [
+                dbc.Col(html.H2("Local Feature Importance"), width=6,
+                        className="offset-3 text-center"),
+                dbc.Col(get_client_feature_importance(
+                    client_info['clientId']), width=12),
+
+            ],
+            className="mb-4", style={'margin-top': '40px'}
+        ),
+        dbc.Row(
+            [
+                dbc.Col(html.H2("Global Feature Importance"), width=6,
+                        className="offset-3 text-center"),
+                dbc.Col(get_global_importance(), width=12),
+            ],
+            className="mb-4",
+        ),
+        dbc.Row(
+            [
+                dbc.Col(html.H2("Neighbours Comparison"), width=6,
+                        className="offset-3 text-center"),
+                dbc.Col(html.Div([build_comparison_graphs(client_info['clientId']),]), width=12),
+            ],
+            className="mb-4",
+        ),
+    ],
+        style={'margin-top': '20px'}
     )
 
 
@@ -88,33 +205,23 @@ def build_client_panel(client_info, prediction):
 ##################                         LAYOUT                       ####################
 ############################################################################################
 
+
 app.layout = dbc.Container(
     [
-        html.H1(children='Prêt à Dépenser', style={'textAlign': 'center', 'margin-top': '20px'}),
-        dcc.Dropdown(fn.get_clients(), placeholder='Select a client',
-                         id='client-dropdown', style={'width': '50%', 'margin': 'left'}),
-        html.Div(id='client_panel',  style={'margin-top': '20px'})
-        # dbc.Row(
-        #     [
-
-        #         dbc.Col(html.Div(id='graph',
-        #                 style={'margin-top': '20px'}), md=8),
-        #     ],
-        #     align="center",
-        # ),
+        navbar,
+        html.Div(id='client_panel')
     ],
-    fluid=True,
-    className="theme-minty"
+    fluid=True
 )
 
 
 @app.callback(
     Output('client_panel', 'children'),
-    Input('client-dropdown', 'value')
+    Input('client-dropdown', 'value'),
 )
 def get_client_info(client_id):
     if client_id is None:
-        return
+        return placeholder
     client_info = fn.get_client_info(client_id)
     client_prediction = fn.get_prediction(client_id)
 

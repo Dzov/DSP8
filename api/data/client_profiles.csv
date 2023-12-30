@@ -1,0 +1,501 @@
+,SK_ID_CURR,CNT_CHILDREN,AMT_INCOME_TOTAL,AMT_CREDIT,AMT_ANNUITY,DAYS_BIRTH,DAYS_EMPLOYED,NAME_FAMILY_STATUS,CODE_GENDER,OCCUPATION_TYPE,NAME_EDUCATION_TYPE,NAME_INCOME_TYPE,ORGANIZATION_TYPE
+0,126370,0,157500,810000,40500,13251,3015,Married,M,IT staff,Higher education,Commercial associate,Business Entity Type 1
+1,196067,1,90000,62554,7551,8434,1389,Civil marriage,F,Accountants,Secondary / secondary special,Working,Self-employed
+2,130239,2,675000,983160,62964,13059,2176,Married,M,High skill tech staff,Higher education,Working,Transport: type 4
+3,310583,1,99000,237024,12231,12337,3648,Married,F,Sales staff,Secondary / secondary special,Commercial associate,Trade: type 7
+4,281795,0,157500,280332,21825,11281,2424,Married,M,Laborers,Secondary / secondary special,Working,Industry: type 9
+5,335921,0,157500,234576,24759,10477,2509,Married,F,High skill tech staff,Secondary / secondary special,Working,Business Entity Type 3
+6,393454,2,202500,573408,29407,13704,373,Married,F,Managers,Higher education,Working,Business Entity Type 3
+7,142481,0,292500,135000,10795,19396,414,Married,M,Accountants,Higher education,Working,Business Entity Type 3
+8,426192,0,180000,539100,29376,17627,3776,Widow,F,Sales staff,Secondary / secondary special,Commercial associate,Business Entity Type 3
+9,177029,0,85500,328500,15934,23309,1648,Widow,F,Accountants,Secondary / secondary special,Pensioner,XNA
+10,429094,0,67500,76500,8365,17471,6417,Married,F,Security staff,Secondary / secondary special,Working,Business Entity Type 3
+11,267259,0,117000,781920,33259,23383,1648,Civil marriage,M,Accountants,Higher education,Pensioner,XNA
+12,101271,0,135000,509400,28444,16945,10134,Married,F,Laborers,Secondary / secondary special,Working,Business Entity Type 2
+13,121846,0,202500,1125000,112500,20713,184,Married,F,Managers,Higher education,Commercial associate,Business Entity Type 3
+14,140129,1,90000,290088,16780,9086,662,Married,F,Core staff,Higher education,Commercial associate,Bank
+15,295701,0,135000,114682,11880,24403,1648,Widow,F,Accountants,Secondary / secondary special,Pensioner,XNA
+16,150745,1,112500,74628,7965,11828,2040,Married,F,Sales staff,Secondary / secondary special,Working,Self-employed
+17,377871,0,139500,291915,21370,21358,1648,Married,F,Accountants,Secondary / secondary special,Pensioner,XNA
+18,237038,0,135000,904500,32616,17373,923,Civil marriage,F,High skill tech staff,Higher education,Commercial associate,Business Entity Type 3
+19,116084,2,117000,119893,12717,12861,4070,Married,M,Drivers,Secondary / secondary special,Working,Self-employed
+20,148451,0,157500,225000,19242,10512,2833,Single / not married,F,IT staff,Incomplete higher,Commercial associate,Medicine
+21,294657,1,90000,286704,22779,12782,3776,Married,F,Accountants,Secondary / secondary special,Working,Self-employed
+22,253945,0,112500,260640,31059,8447,909,Single / not married,M,Private service staff,Higher education,Commercial associate,Services
+23,282259,0,180000,180000,7695,13526,152,Single / not married,F,Private service staff,Lower secondary,Commercial associate,Business Entity Type 3
+24,429770,0,180000,457312,29353,20557,1648,Married,M,Accountants,Secondary / secondary special,Pensioner,XNA
+25,366406,0,157500,675000,24376,20644,1127,Single / not married,F,Sales staff,Higher education,Commercial associate,Business Entity Type 3
+26,393118,0,135000,135000,10224,20320,1957,Married,M,Accountants,Secondary / secondary special,Working,Other
+27,444313,0,112500,281938,21946,21085,1648,Married,F,Accountants,Secondary / secondary special,Pensioner,XNA
+28,261161,1,247500,1928304,79578,17800,5438,Married,F,Core staff,Higher education,State servant,School
+29,411022,0,270000,848745,46174,10012,123,Married,M,Drivers,Secondary / secondary special,Commercial associate,Trade: type 7
+30,188707,0,135000,543037,31302,19488,10962,Civil marriage,F,Sales staff,Secondary / secondary special,Working,Self-employed
+31,195081,0,112500,82957,5202,23507,1648,Married,M,Accountants,Secondary / secondary special,Pensioner,XNA
+32,208478,1,112500,594121,27661,11878,3337,Married,F,Accountants,Higher education,Working,Self-employed
+33,318408,0,108000,423000,27162,10736,171,Separated,F,Core staff,Secondary / secondary special,Commercial associate,Trade: type 3
+34,339380,0,112500,408330,20979,19039,7211,Married,F,Cleaning staff,Secondary / secondary special,Commercial associate,Bank
+35,272013,0,99000,440784,27094,16666,480,Married,F,Cooking staff,Secondary / secondary special,Working,Self-employed
+36,222577,0,144094,594000,30325,13030,1597,Married,F,Managers,Secondary / secondary special,Working,Postal
+37,216306,0,157500,135000,7020,10294,1730,Married,M,High skill tech staff,Secondary / secondary special,Working,Other
+38,126088,0,99000,351792,18090,14445,673,Married,F,High skill tech staff,Secondary / secondary special,Working,Business Entity Type 3
+39,124876,0,126000,93829,9742,17034,2479,Single / not married,F,Sales staff,Higher education,Commercial associate,Other
+40,448338,1,180000,350415,27247,15846,4398,Married,M,Drivers,Secondary / secondary special,Working,Other
+41,344292,1,135000,405000,42655,14981,6805,Married,F,Core staff,Secondary / secondary special,State servant,Kindergarten
+42,103628,1,117000,601470,30708,10489,3689,Married,F,Medicine staff,Secondary / secondary special,Working,Medicine
+43,386255,1,225000,736213,57105,12159,338,Married,F,Accountants,Incomplete higher,Commercial associate,Business Entity Type 3
+44,327231,1,270000,272520,21528,12576,3768,Married,M,Managers,Secondary / secondary special,Commercial associate,Self-employed
+45,107683,0,112500,238500,14719,13550,1648,Married,M,Accountants,Secondary / secondary special,Pensioner,XNA
+46,337576,0,112500,450000,14517,12112,2969,Married,F,Accountants,Secondary / secondary special,Working,Agriculture
+47,133230,0,225000,135000,8388,19087,5955,Married,M,Drivers,Secondary / secondary special,Commercial associate,Other
+48,117467,0,180000,946507,34128,19664,1648,Married,F,Accountants,Secondary / secondary special,Pensioner,XNA
+49,411114,0,225000,594121,25299,17835,2879,Civil marriage,M,Laborers,Secondary / secondary special,Commercial associate,Transport: type 4
+50,150299,1,315000,877500,44932,16273,322,Married,M,Drivers,Secondary / secondary special,Commercial associate,Other
+51,130966,0,157500,493497,48942,22101,151,Widow,F,Accountants,Higher education,Commercial associate,Kindergarten
+52,262058,3,247500,364896,28957,15327,314,Married,F,Accountants,Secondary / secondary special,State servant,Other
+53,243611,0,157500,473841,37566,9825,1350,Married,F,High skill tech staff,Higher education,Working,Government
+54,296433,3,90000,177768,14044,12309,316,Single / not married,F,Sales staff,Secondary / secondary special,Commercial associate,Self-employed
+55,269642,0,135000,650133,45378,19962,2358,Married,F,Managers,Secondary / secondary special,Working,Business Entity Type 3
+56,376515,0,180000,797859,28786,17795,3086,Married,F,Laborers,Secondary / secondary special,Commercial associate,Business Entity Type 3
+57,215433,2,315000,882000,56367,19907,5403,Married,M,Managers,Secondary / secondary special,Working,Self-employed
+58,213862,0,58500,163512,13045,11191,168,Single / not married,F,Core staff,Secondary / secondary special,Commercial associate,Kindergarten
+59,429890,0,337500,502497,36693,14607,2949,Married,M,Security staff,Secondary / secondary special,Working,Business Entity Type 3
+60,401082,0,225000,440784,34825,13349,5817,Married,F,Medicine staff,Secondary / secondary special,Working,Medicine
+61,451938,0,60750,135000,12510,20012,1273,Married,F,Laborers,Secondary / secondary special,Working,Transport: type 4
+62,143903,2,40500,180000,9319,15672,6258,Married,F,Accountants,Secondary / secondary special,State servant,Military
+63,221371,2,135000,225000,24363,14237,404,Married,F,Managers,Higher education,Commercial associate,Realtor
+64,415090,0,256500,450000,46242,19031,7046,Married,M,Drivers,Secondary / secondary special,Working,Medicine
+65,293556,1,54000,49752,5355,15066,7397,Married,F,Accountants,Secondary / secondary special,Working,Business Entity Type 1
+66,455378,0,292500,752116,43177,17599,2457,Married,F,Core staff,Secondary / secondary special,State servant,Kindergarten
+67,235424,0,234000,271957,32404,19272,762,Separated,F,Accountants,Secondary / secondary special,Commercial associate,Government
+68,198774,2,121500,455040,17284,15058,389,Married,F,Medicine staff,Secondary / secondary special,State servant,Security Ministries
+69,244763,1,270000,405000,25879,13623,1648,Married,M,Accountants,Higher education,Pensioner,XNA
+70,411463,0,225000,225000,20637,9588,1179,Separated,M,Accountants,Incomplete higher,Commercial associate,Business Entity Type 3
+71,155988,0,135000,156384,16839,18759,3473,Single / not married,F,Security staff,Secondary / secondary special,Working,Security
+72,422545,0,135000,450000,28759,11382,113,Married,F,Accountants,Higher education,Commercial associate,Construction
+73,147099,0,202500,537471,56569,14685,1748,Married,M,Managers,Higher education,Commercial associate,Self-employed
+74,151654,0,189000,494550,38403,15510,5519,Married,M,Accountants,Secondary / secondary special,Working,Other
+75,383833,0,135000,729792,37390,22266,1648,Married,M,Accountants,Secondary / secondary special,Pensioner,XNA
+76,308965,0,157500,904500,31567,15797,1016,Married,F,Waiters/barmen staff,Secondary / secondary special,Working,Medicine
+77,370146,0,112500,67500,6318,12036,1974,Single / not married,M,Low-skill Laborers,Secondary / secondary special,Working,Business Entity Type 3
+78,258058,3,157500,296505,23076,13658,1105,Separated,F,Secretaries,Secondary / secondary special,Working,Other
+79,281133,1,112500,345510,18873,12140,3449,Married,F,Sales staff,Secondary / secondary special,Working,Self-employed
+80,167771,0,180000,270000,21024,20902,1648,Single / not married,F,Accountants,Secondary / secondary special,Pensioner,XNA
+81,168827,2,180000,295168,16141,13472,1119,Civil marriage,F,High skill tech staff,Higher education,Commercial associate,Business Entity Type 3
+82,407532,1,180000,522396,35041,12501,773,Single / not married,M,Core staff,Secondary / secondary special,Working,Agriculture
+83,105584,1,180000,431280,22149,13774,1384,Civil marriage,M,Accountants,Secondary / secondary special,Working,Self-employed
+84,332225,0,252000,781920,34573,20864,1648,Married,F,Accountants,Secondary / secondary special,Pensioner,XNA
+85,191301,0,270000,746280,58963,13072,1046,Married,M,Laborers,Secondary / secondary special,Working,Business Entity Type 3
+86,328684,0,180000,247500,25488,22453,1648,Married,M,Accountants,Secondary / secondary special,Pensioner,XNA
+87,384656,3,112500,296280,15124,14357,709,Married,M,Accountants,Secondary / secondary special,Working,Self-employed
+88,410745,1,180000,99000,10791,15010,285,Widow,F,HR staff,Higher education,Commercial associate,Business Entity Type 3
+89,319257,0,112500,135000,6750,19129,1648,Single / not married,F,Accountants,Secondary / secondary special,Pensioner,XNA
+90,377759,0,90000,218016,13468,24411,1648,Single / not married,F,Accountants,Incomplete higher,Pensioner,XNA
+91,294452,0,202500,509400,32683,16110,750,Civil marriage,M,Laborers,Secondary / secondary special,Working,Industry: type 10
+92,386938,2,180000,237024,15277,17011,9107,Married,M,High skill tech staff,Higher education,Working,Electricity
+93,228744,0,180000,360000,19530,12820,1882,Married,M,Core staff,Higher education,Working,Trade: type 7
+94,347039,1,90000,225000,17905,15625,179,Married,F,Sales staff,Secondary / secondary special,Working,Business Entity Type 3
+95,203862,2,382500,1572750,50733,13671,3964,Separated,F,Security staff,Incomplete higher,State servant,Government
+96,263355,0,90000,450000,25965,8310,152,Civil marriage,F,Accountants,Incomplete higher,Working,Business Entity Type 3
+97,101367,1,112500,296280,23539,8889,166,Single / not married,F,Sales staff,Secondary / secondary special,Commercial associate,Business Entity Type 3
+98,302217,0,90000,260640,25906,15202,921,Married,F,Cleaning staff,Secondary / secondary special,Working,Business Entity Type 3
+99,328549,2,67500,517500,33201,13693,405,Married,F,Secretaries,Secondary / secondary special,Working,Security Ministries
+100,296432,0,49500,130500,10309,22877,1648,Married,F,Accountants,Secondary / secondary special,Pensioner,XNA
+101,152171,1,180000,450000,21780,13693,5606,Married,M,Core staff,Higher education,Working,Police
+102,168614,0,310500,771781,49455,12935,1950,Married,M,Drivers,Secondary / secondary special,Commercial associate,Self-employed
+103,197650,1,382500,900000,39775,12989,2568,Married,M,Accountants,Lower secondary,Working,Other
+104,237759,0,315000,759195,42520,22856,4034,Married,M,Core staff,Higher education,Commercial associate,Advertising
+105,339455,0,270000,788472,50521,18648,857,Single / not married,M,Laborers,Secondary / secondary special,Working,University
+106,156050,0,67500,389844,18882,22755,663,Widow,F,Core staff,Secondary / secondary special,State servant,School
+107,157159,3,157500,450000,23107,12951,1648,Married,M,Accountants,Secondary / secondary special,Pensioner,XNA
+108,179241,0,585000,450000,14517,21267,1648,Married,F,Accountants,Secondary / secondary special,Pensioner,XNA
+109,134558,0,270000,451102,24601,10572,1949,Single / not married,M,Drivers,Secondary / secondary special,Working,Emergency
+110,414767,1,135000,329215,23953,11213,705,Civil marriage,M,Drivers,Secondary / secondary special,Working,Transport: type 3
+111,227600,0,135000,271066,17451,16315,1769,Civil marriage,F,Cleaning staff,Secondary / secondary special,Commercial associate,Self-employed
+112,416306,0,270000,360000,23134,13731,2214,Married,M,Drivers,Secondary / secondary special,Working,Self-employed
+113,424725,0,135000,341280,24961,12073,1499,Married,F,Cooking staff,Secondary / secondary special,Commercial associate,Restaurant
+114,124705,0,90000,509400,32683,17142,1648,Widow,F,Accountants,Secondary / secondary special,Pensioner,XNA
+115,395933,0,270000,832500,26986,21781,1908,Married,M,Security staff,Higher education,Working,Business Entity Type 3
+116,123615,0,162000,225000,23184,24607,1648,Married,F,Accountants,Secondary / secondary special,Pensioner,XNA
+117,371657,0,180000,573408,29407,18749,878,Married,M,Drivers,Secondary / secondary special,Commercial associate,Self-employed
+118,264505,0,121500,360000,28570,10325,1881,Single / not married,M,Laborers,Secondary / secondary special,Working,Other
+119,323036,0,45000,52128,5602,19646,2237,Separated,F,Sales staff,Secondary / secondary special,Working,Self-employed
+120,219450,1,450000,2013840,83241,17968,11043,Single / not married,F,Managers,Higher education,Commercial associate,Government
+121,347690,0,112500,90000,9220,23673,1648,Civil marriage,M,Accountants,Secondary / secondary special,Pensioner,XNA
+122,348536,2,90000,497448,49329,22919,1648,Married,F,Accountants,Secondary / secondary special,Pensioner,XNA
+123,449412,0,225000,1226700,39703,22278,1648,Widow,F,Accountants,Higher education,Pensioner,XNA
+124,304257,0,157500,675000,38880,22707,1648,Married,F,Accountants,Secondary / secondary special,Pensioner,XNA
+125,419833,0,180000,553581,31041,19157,1091,Married,M,Managers,Secondary / secondary special,Working,Business Entity Type 3
+126,285562,0,72958,675000,27985,16426,623,Single / not married,M,Laborers,Secondary / secondary special,Commercial associate,Trade: type 2
+127,245939,0,180000,543037,43033,9328,1743,Married,F,Accountants,Higher education,Commercial associate,Business Entity Type 3
+128,346855,1,157500,180000,18900,10574,664,Married,M,Security staff,Secondary / secondary special,Working,Trade: type 7
+129,272055,0,337500,502497,36693,14641,2472,Civil marriage,M,High skill tech staff,Secondary / secondary special,Working,Business Entity Type 3
+130,310414,0,202500,598500,32598,18578,277,Married,F,Cooking staff,Secondary / secondary special,Working,Kindergarten
+131,168994,0,250456,1483650,62860,9438,1212,Single / not married,F,Core staff,Higher education,Commercial associate,Trade: type 2
+132,360479,0,90000,735804,27868,21079,1648,Widow,F,Accountants,Secondary / secondary special,Pensioner,XNA
+133,111541,1,92250,304933,24088,9742,2444,Married,F,Accountants,Secondary / secondary special,Working,Business Entity Type 3
+134,428409,0,180000,539100,27652,17106,6120,Civil marriage,F,Medicine staff,Secondary / secondary special,Commercial associate,Hotel
+135,291449,0,90000,270000,12987,14254,4157,Single / not married,F,Accountants,Incomplete higher,Working,Other
+136,385147,0,58500,183784,13869,22666,1648,Widow,F,Accountants,Secondary / secondary special,Pensioner,XNA
+137,177048,0,135000,675000,24246,16387,6358,Married,F,Sales staff,Secondary / secondary special,Working,Services
+138,136454,0,85500,450000,23107,21739,1648,Separated,F,Accountants,Secondary / secondary special,Pensioner,XNA
+139,201738,0,427500,1812456,56385,21754,1648,Married,M,Accountants,Secondary / secondary special,Pensioner,XNA
+140,277699,0,180000,218938,17073,20509,1648,Widow,F,Accountants,Secondary / secondary special,Pensioner,XNA
+141,413597,0,31500,49752,5220,22654,1648,Separated,F,Accountants,Secondary / secondary special,Pensioner,XNA
+142,236053,0,112500,315000,24885,14065,6461,Married,F,Accountants,Secondary / secondary special,State servant,Agriculture
+143,111804,1,256500,550980,43659,10100,415,Married,M,Managers,Secondary / secondary special,Commercial associate,Business Entity Type 3
+144,259168,0,135000,599778,28984,12717,96,Single / not married,M,Laborers,Secondary / secondary special,Working,Business Entity Type 3
+145,394804,1,202500,900000,46084,15482,1648,Married,M,Accountants,Higher education,Pensioner,XNA
+146,429897,1,121500,900000,29164,10045,809,Married,F,Managers,Higher education,State servant,Kindergarten
+147,404172,0,225000,1125000,50184,19151,3863,Married,F,Core staff,Secondary / secondary special,Commercial associate,Government
+148,367256,0,270000,539100,27652,14866,104,Civil marriage,M,Laborers,Secondary / secondary special,Working,Industry: type 9
+149,242622,0,135000,450000,35685,14727,1036,Married,M,High skill tech staff,Secondary / secondary special,Commercial associate,Business Entity Type 3
+150,356016,1,112500,900000,43299,17236,10540,Married,F,High skill tech staff,Secondary / secondary special,Working,Other
+151,311875,0,157500,583834,31801,23714,1648,Married,M,Accountants,Higher education,Pensioner,XNA
+152,181958,0,157500,450000,35685,20907,1295,Married,F,Laborers,Secondary / secondary special,Working,School
+153,401820,1,130500,402214,31905,13842,5061,Married,M,Laborers,Secondary / secondary special,Commercial associate,Construction
+154,220066,0,112500,677664,36891,9273,437,Single / not married,M,Drivers,Secondary / secondary special,Commercial associate,Business Entity Type 3
+155,176088,0,180000,558706,48082,16458,1753,Married,F,Accountants,Secondary / secondary special,Commercial associate,Self-employed
+156,143828,0,157500,296505,22297,23576,1648,Married,F,Accountants,Secondary / secondary special,Pensioner,XNA
+157,300115,1,162000,360000,25600,20622,1648,Married,M,Accountants,Higher education,Pensioner,XNA
+158,104320,0,135000,711454,56340,17275,537,Married,M,Cooking staff,Secondary / secondary special,Working,Self-employed
+159,283683,0,166500,598500,30685,8354,1193,Married,F,Sales staff,Incomplete higher,Commercial associate,Self-employed
+160,235901,0,180000,407520,26041,11990,350,Married,F,Private service staff,Secondary / secondary special,Commercial associate,Services
+161,435962,0,337500,1350000,46926,18427,2478,Married,F,Core staff,Secondary / secondary special,State servant,Government
+162,415111,0,180000,746280,42970,22533,11557,Widow,F,Core staff,Higher education,State servant,Kindergarten
+163,185640,3,99000,511249,27864,14132,986,Married,F,Laborers,Secondary / secondary special,Working,Trade: type 1
+164,369180,1,112500,182448,18823,11443,1449,Married,F,Laborers,Secondary / secondary special,Working,Self-employed
+165,128474,0,180000,334152,17059,14214,307,Married,M,Accountants,Secondary / secondary special,Working,Construction
+166,172562,0,202500,523152,37336,17225,114,Widow,F,Accountants,Secondary / secondary special,State servant,Business Entity Type 3
+167,260422,0,157500,568800,23908,23697,1648,Married,M,Accountants,Secondary / secondary special,Pensioner,XNA
+168,164842,0,270000,983160,65835,10562,1517,Civil marriage,M,Sales staff,Incomplete higher,Commercial associate,Business Entity Type 3
+169,431988,0,166500,323460,25029,20279,1648,Married,F,Accountants,Higher education,Pensioner,XNA
+170,396334,0,135000,900000,69781,19457,3857,Married,F,Core staff,Secondary / secondary special,State servant,Postal
+171,355819,0,405000,450000,22977,15677,2631,Separated,F,Accountants,Secondary / secondary special,Commercial associate,Business Entity Type 2
+172,317184,0,216000,260640,27499,15041,639,Married,M,Accountants,Secondary / secondary special,Commercial associate,Business Entity Type 1
+173,130236,0,90000,450000,22977,17372,420,Married,F,Cooking staff,Secondary / secondary special,Working,Kindergarten
+174,408249,0,157500,280170,30303,23094,1648,Married,F,Accountants,Higher education,Pensioner,XNA
+175,204644,1,90000,225000,23755,19865,1648,Single / not married,F,Accountants,Secondary / secondary special,Pensioner,XNA
+176,281634,0,216000,479700,50503,10916,272,Civil marriage,F,Secretaries,Higher education,Working,Other
+177,366282,0,103500,550980,40221,18088,1440,Married,F,Laborers,Secondary / secondary special,Commercial associate,Hotel
+178,135704,0,135000,279468,14287,10182,2549,Single / not married,F,Accountants,Secondary / secondary special,Working,School
+179,120679,0,198000,229500,7965,13199,503,Married,F,Managers,Higher education,Working,Business Entity Type 3
+180,344019,0,180000,702000,35973,15396,3541,Married,M,Drivers,Secondary / secondary special,Working,Industry: type 11
+181,154065,0,112500,274500,29691,11128,366,Civil marriage,F,Sales staff,Secondary / secondary special,Working,Business Entity Type 3
+182,102206,1,112500,225000,16132,15977,9271,Civil marriage,F,High skill tech staff,Secondary / secondary special,Working,University
+183,315988,0,270000,1350000,55714,18292,4071,Married,F,Accountants,Higher education,Working,School
+184,191494,0,193500,601470,30838,22683,1960,Widow,F,Accountants,Lower secondary,Commercial associate,Business Entity Type 3
+185,133501,0,112500,207396,16515,10517,260,Married,F,Sales staff,Secondary / secondary special,Working,Self-employed
+186,156119,0,225000,1350000,92727,13481,2304,Married,F,Managers,Higher education,Working,Trade: type 7
+187,162513,1,144000,577147,23949,10076,845,Married,M,Accountants,Secondary / secondary special,Working,Telecom
+188,156527,0,225000,1214100,67792,19770,2116,Married,F,Managers,Secondary / secondary special,Commercial associate,Self-employed
+189,205525,0,162000,527373,38506,21926,1648,Married,M,Accountants,Secondary / secondary special,Pensioner,XNA
+190,106314,1,378000,582804,29884,14491,6407,Separated,M,Laborers,Secondary / secondary special,State servant,Military
+191,314182,0,202500,675000,34465,8878,272,Married,F,Accountants,Higher education,Commercial associate,Business Entity Type 3
+192,317103,1,81000,99504,10323,16769,3414,Married,F,Accountants,Secondary / secondary special,Commercial associate,Self-employed
+193,279715,1,225000,161595,17095,15931,5926,Married,M,Accountants,Secondary / secondary special,Working,Transport: type 2
+194,267998,0,112500,248760,26248,19849,2490,Married,F,Managers,Higher education,Working,Self-employed
+195,395585,0,90000,52128,5742,12201,92,Single / not married,M,Core staff,Higher education,Commercial associate,Business Entity Type 3
+196,398967,1,270000,229500,27364,9107,233,Married,M,Laborers,Secondary / secondary special,Working,Business Entity Type 3
+197,325814,0,162000,360000,28570,9176,1590,Single / not married,M,Accountants,Secondary / secondary special,Working,Business Entity Type 2
+198,299074,0,180000,450000,23107,12572,3136,Married,M,Accountants,Secondary / secondary special,Commercial associate,Business Entity Type 3
+199,389818,0,58500,906660,32697,16900,1699,Married,F,Cleaning staff,Secondary / secondary special,Working,Business Entity Type 3
+200,242185,1,112500,272520,16803,10208,853,Married,F,Sales staff,Secondary / secondary special,Working,Trade: type 3
+201,439549,2,180000,391500,42291,14955,1727,Married,F,Accountants,Secondary / secondary special,Working,Self-employed
+202,109580,0,225000,1083591,35086,22255,845,Married,F,Managers,Higher education,Working,Business Entity Type 3
+203,165046,0,103500,1080000,34969,15823,2427,Married,F,Laborers,Secondary / secondary special,State servant,Transport: type 2
+204,309204,0,180000,817560,30951,20591,1648,Married,F,Accountants,Secondary / secondary special,Pensioner,XNA
+205,159078,0,157500,211630,18292,13267,1563,Married,M,Accountants,Secondary / secondary special,Working,Construction
+206,146458,0,270000,540000,22878,21433,1648,Married,M,Accountants,Secondary / secondary special,Pensioner,XNA
+207,177883,0,67500,367560,15579,22643,1648,Married,F,Accountants,Secondary / secondary special,Pensioner,XNA
+208,371357,2,94500,161505,14940,10732,2053,Married,M,Security staff,Secondary / secondary special,Working,Trade: type 7
+209,132555,0,157500,598500,20565,14356,5393,Single / not married,F,Sales staff,Higher education,Working,Trade: type 7
+210,341520,1,157500,156384,15597,16198,3212,Married,F,Sales staff,Secondary / secondary special,Working,Self-employed
+211,270856,0,166500,306000,36445,8637,1697,Single / not married,M,Drivers,Incomplete higher,Working,Self-employed
+212,117934,0,135000,306306,14863,20310,1648,Married,M,Accountants,Incomplete higher,Pensioner,XNA
+213,311343,0,135000,224149,23665,16244,795,Married,M,Laborers,Higher education,Working,Business Entity Type 3
+214,191508,0,315000,1032093,42165,10307,2414,Married,M,Core staff,Higher education,Commercial associate,Trade: type 2
+215,150106,0,90000,407520,32197,12090,1516,Married,F,Laborers,Secondary / secondary special,Working,Business Entity Type 1
+216,420866,0,157500,708939,36328,19063,11132,Married,F,Laborers,Secondary / secondary special,Commercial associate,Industry: type 3
+217,150618,0,112500,341280,21937,19539,6534,Married,M,Managers,Secondary / secondary special,Working,Business Entity Type 3
+218,172456,0,162000,171000,13509,12195,909,Widow,F,Core staff,Secondary / secondary special,Commercial associate,Self-employed
+219,124552,1,180000,1683648,54441,11555,627,Married,F,Sales staff,Secondary / secondary special,Commercial associate,Business Entity Type 3
+220,403692,0,76500,271957,28687,17178,691,Married,F,Sales staff,Secondary / secondary special,Working,Trade: type 7
+221,408780,2,445500,900000,46084,12884,3855,Married,M,Managers,Higher education,Working,Business Entity Type 3
+222,147862,3,126000,1507500,62343,13419,585,Married,F,Laborers,Higher education,Working,Self-employed
+223,306116,0,112500,285723,21492,20432,13788,Married,F,High skill tech staff,Secondary / secondary special,Working,Business Entity Type 2
+224,119802,0,180000,104256,11074,11391,3450,Single / not married,F,Accountants,Higher education,Commercial associate,Business Entity Type 3
+225,419175,0,112500,156384,16024,24727,1648,Widow,F,Accountants,Secondary / secondary special,Pensioner,XNA
+226,155135,0,94500,440784,32202,10108,172,Civil marriage,M,Accountants,Higher education,Commercial associate,Industry: type 12
+227,264863,0,121500,440784,34956,15468,1052,Married,F,Sales staff,Higher education,Working,Business Entity Type 1
+228,214488,1,180000,389484,20016,11717,897,Married,M,IT staff,Incomplete higher,Commercial associate,Business Entity Type 3
+229,419162,0,112500,315000,24376,11263,2030,Married,F,Accountants,Higher education,Commercial associate,Business Entity Type 3
+230,123477,1,270000,500211,46008,13880,1434,Civil marriage,F,Accountants,Higher education,Commercial associate,Industry: type 5
+231,180420,0,405000,756792,53950,20113,165,Married,F,Accountants,Higher education,State servant,Business Entity Type 3
+232,210862,0,427500,2013840,62509,15771,1670,Married,F,Accountants,Higher education,Working,Self-employed
+233,165545,2,112500,172021,18193,16844,3841,Married,F,Accountants,Higher education,Working,Medicine
+234,126486,0,202500,450000,23107,20215,864,Married,F,Medicine staff,Secondary / secondary special,Working,Medicine
+235,405319,1,180000,1350000,46926,12924,632,Married,F,Laborers,Higher education,Working,Business Entity Type 3
+236,287104,0,148500,502497,28975,22512,1648,Married,M,Accountants,Secondary / secondary special,Pensioner,XNA
+237,329176,1,270000,651960,27535,14218,1252,Separated,M,Laborers,Lower secondary,Working,Industry: type 11
+238,425338,1,112500,481176,24696,14673,920,Married,F,Core staff,Secondary / secondary special,Working,Self-employed
+239,255167,0,171000,1642500,50980,17503,4801,Married,M,High skill tech staff,Secondary / secondary special,Working,Restaurant
+240,447709,1,112500,371862,29511,10279,1386,Married,F,Core staff,Higher education,Working,School
+241,418604,1,144000,193500,20448,14922,1402,Single / not married,F,HR staff,Higher education,Working,Business Entity Type 3
+242,381430,2,225000,641173,32868,16093,1570,Married,F,Laborers,Secondary / secondary special,Working,Construction
+243,213928,0,180000,225000,14377,13122,2296,Separated,M,Accountants,Secondary / secondary special,State servant,Industry: type 4
+244,390497,0,90000,254799,15718,22079,1648,Widow,F,Accountants,Secondary / secondary special,Pensioner,XNA
+245,100222,0,360000,945000,34074,17796,2785,Married,F,Accountants,Secondary / secondary special,Working,Self-employed
+246,448958,0,112500,395640,30748,17079,86,Single / not married,F,Accountants,Secondary / secondary special,State servant,Government
+247,123263,1,135000,128092,11875,13661,1147,Married,F,Sales staff,Secondary / secondary special,Working,Self-employed
+248,410358,0,225000,413235,32778,20999,114,Separated,M,Drivers,Secondary / secondary special,Commercial associate,Business Entity Type 2
+249,125842,0,123750,172021,12991,21037,1648,Separated,F,Accountants,Secondary / secondary special,Pensioner,XNA
+250,397281,0,72000,62554,6313,19098,3185,Married,F,Laborers,Secondary / secondary special,Commercial associate,Business Entity Type 3
+251,245784,2,225000,1572750,48816,12344,1173,Married,M,High skill tech staff,Secondary / secondary special,Working,Business Entity Type 1
+252,370188,0,315000,407727,26055,18405,89,Married,M,Drivers,Secondary / secondary special,Commercial associate,Business Entity Type 3
+253,246744,0,94500,286704,22779,8042,952,Married,F,Laborers,Incomplete higher,Commercial associate,Trade: type 7
+254,287050,0,180000,1520451,47191,16597,3271,Married,F,Managers,Higher education,Commercial associate,Business Entity Type 3
+255,322267,0,58500,99000,10273,24107,1648,Single / not married,F,Accountants,Secondary / secondary special,Pensioner,XNA
+256,267080,0,157500,670500,42849,17137,1648,Married,M,Accountants,Higher education,Pensioner,XNA
+257,453708,1,117000,280170,30303,14320,1862,Married,F,Accountants,Higher education,Commercial associate,Business Entity Type 3
+258,391929,0,139500,708552,25578,22891,1648,Married,F,Accountants,Secondary / secondary special,Pensioner,XNA
+259,128744,1,90000,190764,15201,12245,612,Married,F,Laborers,Incomplete higher,Commercial associate,Trade: type 7
+260,140512,0,297000,550980,33835,18288,2605,Single / not married,F,Laborers,Secondary / secondary special,Commercial associate,Business Entity Type 3
+261,287726,0,270000,180000,9000,10431,2749,Single / not married,F,Managers,Higher education,Commercial associate,Services
+262,456169,0,85500,109008,7411,22995,1648,Married,F,Accountants,Secondary / secondary special,Pensioner,XNA
+263,306025,1,180000,616500,26248,12017,2520,Married,F,Core staff,Higher education,Commercial associate,Self-employed
+264,321928,1,94500,601470,30838,15948,1081,Married,F,Core staff,Higher education,Working,Postal
+265,355393,1,144000,675000,36616,11236,1987,Married,F,Sales staff,Secondary / secondary special,Working,Self-employed
+266,365051,1,81000,83538,6376,17069,1648,Married,F,Accountants,Secondary / secondary special,Pensioner,XNA
+267,131641,1,54000,272520,21658,14072,1844,Married,F,Security staff,Secondary / secondary special,Working,Self-employed
+268,389227,0,90000,441000,22644,10680,394,Married,M,Laborers,Higher education,Working,Industry: type 5
+269,248694,0,76500,283500,24462,17346,2222,Married,F,High skill tech staff,Secondary / secondary special,Working,Transport: type 3
+270,384220,0,270000,906660,32566,19703,1204,Married,F,Laborers,Secondary / secondary special,Working,Business Entity Type 3
+271,363082,0,148500,577413,29610,8470,560,Civil marriage,F,Sales staff,Incomplete higher,Working,Trade: type 7
+272,411027,0,225000,1058197,36909,16304,4167,Married,F,Sales staff,Secondary / secondary special,Working,Business Entity Type 3
+273,317603,0,112500,45000,5337,10594,1404,Single / not married,F,Accountants,Higher education,Working,Business Entity Type 3
+274,208755,0,202500,817560,30951,21108,1648,Married,F,Accountants,Higher education,Pensioner,XNA
+275,189612,0,270000,1384740,58801,19315,5060,Married,F,Sales staff,Higher education,Working,Self-employed
+276,171403,0,90000,334152,18126,8979,1870,Single / not married,M,Core staff,Secondary / secondary special,Working,Agriculture
+277,290408,2,67500,225000,23755,16472,1394,Married,F,Sales staff,Secondary / secondary special,Working,Self-employed
+278,248368,0,157500,320382,15543,18270,10836,Married,M,Accountants,Secondary / secondary special,Working,Business Entity Type 1
+279,113535,0,270000,882000,45162,17588,6216,Married,F,High skill tech staff,Secondary / secondary special,Working,Business Entity Type 3
+280,261116,0,121500,149256,17842,11712,410,Civil marriage,M,Laborers,Secondary / secondary special,Working,Other
+281,195240,0,112500,681300,25812,23060,1648,Married,F,Accountants,Secondary / secondary special,Pensioner,XNA
+282,342684,0,166500,481176,24696,18857,2810,Single / not married,F,Medicine staff,Secondary / secondary special,Working,Kindergarten
+283,406598,3,63000,172021,17757,17102,9541,Married,F,Medicine staff,Secondary / secondary special,State servant,Medicine
+284,370915,1,112500,128092,10039,11615,202,Married,F,Accountants,Secondary / secondary special,Working,Business Entity Type 3
+285,320568,0,130500,431280,18270,20032,5389,Separated,F,Core staff,Secondary / secondary special,Working,Postal
+286,282046,1,337500,477000,24484,16693,1713,Separated,M,Drivers,Higher education,Commercial associate,Trade: type 3
+287,247534,0,81000,360000,17316,18915,1393,Married,F,Sales staff,Secondary / secondary special,Working,Self-employed
+288,136778,1,157500,280170,29547,19315,2089,Civil marriage,F,Accountants,Secondary / secondary special,Working,Business Entity Type 3
+289,296912,1,180000,610483,23143,15501,5386,Separated,F,High skill tech staff,Secondary / secondary special,Working,Business Entity Type 2
+290,294758,0,103500,266832,20079,22520,1648,Married,F,Accountants,Lower secondary,Pensioner,XNA
+291,260080,0,180000,481176,24696,13097,1788,Married,F,Security staff,Secondary / secondary special,Commercial associate,Business Entity Type 3
+292,343241,0,103500,533709,27378,23702,1648,Married,M,Accountants,Secondary / secondary special,Pensioner,XNA
+293,392050,0,157500,271066,16713,14123,1964,Married,F,Laborers,Secondary / secondary special,Working,Self-employed
+294,227332,0,112500,442062,22698,19059,1648,Widow,F,Accountants,Secondary / secondary special,Pensioner,XNA
+295,286668,0,243000,1258650,70411,16136,3358,Married,F,Medicine staff,Higher education,Working,Military
+296,231480,1,180000,225000,23184,11597,927,Civil marriage,F,Core staff,Higher education,Working,Kindergarten
+297,179290,1,157500,269982,27792,15977,198,Separated,F,Accountants,Higher education,Commercial associate,Other
+298,172949,0,202500,900000,43429,8419,797,Married,M,Laborers,Secondary / secondary special,Working,Business Entity Type 3
+299,257953,0,180000,242950,19323,16873,1757,Married,M,Drivers,Higher education,Working,Other
+300,340019,0,112500,568800,20430,21004,1648,Married,F,Accountants,Secondary / secondary special,Pensioner,XNA
+301,204076,0,157500,135000,14305,14987,1196,Married,M,Drivers,Secondary / secondary special,Working,Construction
+302,263705,0,81000,285723,22239,16940,127,Married,M,Accountants,Secondary / secondary special,Commercial associate,Postal
+303,156663,1,180000,1024740,52452,19467,3195,Married,F,Core staff,Higher education,Working,Self-employed
+304,344716,1,67500,225000,17905,14666,1106,Civil marriage,F,Security staff,Secondary / secondary special,Working,Security
+305,318827,2,90000,450000,14517,11967,4664,Married,F,Medicine staff,Secondary / secondary special,Working,Medicine
+306,348551,0,135000,360000,18378,19219,9002,Single / not married,F,Accountants,Secondary / secondary special,State servant,Kindergarten
+307,394940,0,405000,900000,46084,17597,2608,Married,M,Managers,Higher education,Working,Business Entity Type 3
+308,160562,0,202500,900000,38133,10322,240,Separated,F,Accountants,Higher education,Working,Construction
+309,119813,1,180000,104256,12370,13866,492,Married,M,Drivers,Secondary / secondary special,Working,Business Entity Type 3
+310,105139,1,135000,352422,27400,14229,691,Separated,F,Sales staff,Secondary / secondary special,Commercial associate,Business Entity Type 3
+311,410302,0,135000,539100,27522,15512,393,Married,F,Accountants,Secondary / secondary special,Commercial associate,Business Entity Type 3
+312,360545,0,112500,270000,17253,16241,5663,Married,F,Accountants,Higher education,Working,Business Entity Type 3
+313,304942,0,225000,254799,20259,16970,1019,Separated,F,Laborers,Secondary / secondary special,Commercial associate,Trade: type 7
+314,157212,0,112500,630000,22756,21770,1648,Widow,F,Accountants,Secondary / secondary special,Pensioner,XNA
+315,243900,0,225000,269982,32170,11950,1728,Civil marriage,M,Laborers,Secondary / secondary special,Commercial associate,Business Entity Type 3
+316,419767,0,72000,156384,12100,19252,5478,Married,M,High skill tech staff,Secondary / secondary special,State servant,Government
+317,172695,1,202500,104256,11074,16684,1716,Married,M,Laborers,Secondary / secondary special,Commercial associate,Business Entity Type 3
+318,216122,0,90000,296280,21690,11553,371,Single / not married,M,Accountants,Secondary / secondary special,Working,Business Entity Type 3
+319,183902,0,360000,651600,28831,22215,1648,Married,M,Accountants,Secondary / secondary special,Pensioner,XNA
+320,313741,0,90000,45000,5220,8269,1048,Civil marriage,M,Drivers,Secondary / secondary special,State servant,Military
+321,294373,0,180000,278460,21676,13863,4226,Married,M,Drivers,Secondary / secondary special,Working,Business Entity Type 3
+322,159865,0,229500,677664,34731,16204,3169,Married,M,Drivers,Secondary / secondary special,Working,Self-employed
+323,392513,0,56511,481176,19854,8906,512,Single / not married,F,Sales staff,Secondary / secondary special,Working,Business Entity Type 3
+324,261273,0,211500,382500,20880,9272,1644,Married,F,Sales staff,Secondary / secondary special,Working,Business Entity Type 3
+325,111958,0,85500,431280,18994,20847,1648,Separated,F,Accountants,Secondary / secondary special,Pensioner,XNA
+326,234673,0,135000,103500,9621,9922,1017,Married,M,Laborers,Secondary / secondary special,Working,Business Entity Type 3
+327,208213,0,193500,675000,38880,19931,1850,Married,F,Accountants,Higher education,Working,Business Entity Type 3
+328,303473,0,81000,439740,23985,18425,383,Civil marriage,F,Cooking staff,Secondary / secondary special,Working,Self-employed
+329,363386,0,85500,1066320,38430,20360,10585,Married,M,Laborers,Secondary / secondary special,Working,Business Entity Type 3
+330,388269,0,76500,218016,13932,14754,1482,Married,F,Sales staff,Secondary / secondary special,Working,Trade: type 7
+331,396931,2,247500,417708,33133,12141,2291,Married,M,Drivers,Secondary / secondary special,Working,Other
+332,270317,0,247500,1528200,53248,23742,1648,Married,M,Accountants,Secondary / secondary special,Pensioner,XNA
+333,122069,0,81000,225000,23184,16749,926,Married,F,Cooking staff,Secondary / secondary special,Working,Industry: type 9
+334,292966,0,630000,1096020,59589,13828,1315,Married,M,Managers,Higher education,Commercial associate,Business Entity Type 3
+335,200873,0,180000,1800000,56002,15660,1079,Married,F,Laborers,Secondary / secondary special,Working,Self-employed
+336,228169,0,157500,238500,23125,8673,220,Single / not married,F,Core staff,Secondary / secondary special,Commercial associate,Trade: type 2
+337,371548,0,202500,413235,23850,15234,6222,Married,F,Managers,Secondary / secondary special,Working,Self-employed
+338,200641,2,112500,1812456,56385,14735,6616,Married,F,Accountants,Higher education,Working,Other
+339,229614,1,270000,1107900,35869,9884,2026,Married,M,Secretaries,Incomplete higher,Working,Other
+340,164262,0,67500,311877,16051,22142,1648,Single / not married,F,Accountants,Lower secondary,Pensioner,XNA
+341,412713,0,76500,675000,29862,20702,1648,Married,F,Accountants,Secondary / secondary special,Pensioner,XNA
+342,412229,0,153000,539100,26064,23380,1648,Widow,F,Accountants,Secondary / secondary special,Pensioner,XNA
+343,154557,1,315000,502497,28188,14275,5253,Married,F,Sales staff,Higher education,Commercial associate,Self-employed
+344,252032,1,81000,280170,29547,10681,566,Married,F,Core staff,Higher education,Working,School
+345,308536,0,126000,675000,25578,19875,4436,Married,F,Accountants,Secondary / secondary special,Working,Business Entity Type 3
+346,156555,2,144000,1076287,45729,11568,1880,Married,F,Core staff,Higher education,Working,Kindergarten
+347,185475,0,135000,407520,32328,8057,161,Single / not married,F,Core staff,Higher education,Commercial associate,Bank
+348,419688,0,90000,254700,21780,12528,575,Married,F,Sales staff,Secondary / secondary special,Working,Business Entity Type 3
+349,274890,0,72000,225000,12204,9022,961,Single / not married,F,Cleaning staff,Secondary / secondary special,Working,Other
+350,117996,2,121500,389844,20034,16536,598,Married,M,Laborers,Secondary / secondary special,Working,Business Entity Type 3
+351,292558,0,135000,315000,15750,21630,1648,Married,F,Accountants,Higher education,Pensioner,XNA
+352,194514,0,405000,675000,28728,17154,718,Married,F,Accountants,Higher education,Working,Business Entity Type 3
+353,198225,0,292500,1325475,56290,22829,1648,Widow,M,Accountants,Secondary / secondary special,Pensioner,XNA
+354,232094,0,225000,577125,45729,14506,389,Single / not married,M,Drivers,Higher education,Working,Transport: type 3
+355,362803,0,130500,274500,28953,24666,1648,Married,F,Accountants,Secondary / secondary special,Pensioner,XNA
+356,282100,0,135000,585000,29997,15622,2774,Married,F,Sales staff,Secondary / secondary special,Working,Self-employed
+357,385910,0,135000,431280,22149,20886,1648,Civil marriage,F,Accountants,Secondary / secondary special,Pensioner,XNA
+358,242332,1,135000,402048,20655,12805,233,Married,M,Drivers,Secondary / secondary special,Commercial associate,Transport: type 4
+359,239573,0,99000,382050,24543,15354,473,Married,F,Laborers,Secondary / secondary special,Working,Business Entity Type 3
+360,409158,0,63000,67765,7074,14919,1296,Married,F,Sales staff,Secondary / secondary special,Working,Business Entity Type 2
+361,217125,0,90000,675000,25578,17680,148,Separated,F,Accountants,Higher education,Working,Other
+362,327017,0,112500,810000,32652,21686,1648,Married,M,Accountants,Secondary / secondary special,Pensioner,XNA
+363,190911,1,162000,550980,43659,13995,595,Married,M,Drivers,Secondary / secondary special,Working,Self-employed
+364,436674,0,83250,67500,7218,23056,1648,Married,F,Accountants,Secondary / secondary special,Pensioner,XNA
+365,114201,1,202500,979146,60034,13108,3513,Single / not married,F,Cooking staff,Secondary / secondary special,Working,Other
+366,178537,0,238500,659025,48087,21102,1648,Married,F,Accountants,Secondary / secondary special,Pensioner,XNA
+367,209872,0,238500,746280,42970,21116,1648,Married,F,Accountants,Secondary / secondary special,Pensioner,XNA
+368,294835,2,135000,539100,29376,17685,3554,Married,F,Cooking staff,Lower secondary,Commercial associate,Business Entity Type 3
+369,257618,0,189000,900000,46084,20555,1648,Married,F,Accountants,Higher education,Pensioner,XNA
+370,281764,0,225000,781920,40054,14040,1647,Married,M,Laborers,Higher education,Working,Business Entity Type 3
+371,207017,0,270000,550980,43659,9240,1173,Single / not married,M,Accountants,Secondary / secondary special,Working,Business Entity Type 2
+372,412861,0,69750,78192,8338,22370,1648,Widow,F,Accountants,Secondary / secondary special,Pensioner,XNA
+373,337608,0,211500,746280,42840,14949,8045,Married,F,Medicine staff,Secondary / secondary special,State servant,Medicine
+374,126896,0,225000,521136,59067,13169,2933,Single / not married,M,Managers,Higher education,Commercial associate,Business Entity Type 3
+375,175495,0,112500,65182,5278,15097,2808,Civil marriage,M,Laborers,Secondary / secondary special,Working,Self-employed
+376,371664,1,157500,393543,17464,15284,952,Separated,F,Private service staff,Secondary / secondary special,Working,Self-employed
+377,432022,2,202500,260640,24034,14659,2705,Civil marriage,M,Accountants,Secondary / secondary special,Working,Industry: type 1
+378,346890,0,90000,117000,11988,22425,5593,Married,F,Managers,Higher education,Working,Medicine
+379,368539,1,153000,395766,20335,16495,6790,Married,M,Laborers,Higher education,Working,Industry: type 7
+380,388179,0,225000,539100,27652,17233,1648,Married,M,Accountants,Higher education,Pensioner,XNA
+381,404288,0,225000,440784,34956,8129,866,Single / not married,M,Accountants,Secondary / secondary special,Working,Government
+382,389707,0,90000,49500,5202,24677,1648,Widow,F,Accountants,Higher education,Pensioner,XNA
+383,402924,0,90000,729792,37260,16896,1344,Married,M,Laborers,Secondary / secondary special,Working,Business Entity Type 3
+384,216807,0,184500,278460,21676,23812,1648,Married,F,Accountants,Higher education,Pensioner,XNA
+385,453449,2,405000,738000,37809,14224,7602,Married,F,Managers,Academic degree,Working,Other
+386,197040,0,315000,164182,17370,23915,1648,Widow,M,Accountants,Secondary / secondary special,Pensioner,XNA
+387,188486,0,117000,625680,20313,22443,3588,Married,F,Core staff,Secondary / secondary special,Commercial associate,School
+388,141110,1,675000,1792318,55764,17389,8093,Married,F,Managers,Higher education,Working,Restaurant
+389,141323,0,202500,601470,30838,21320,1200,Married,M,Laborers,Secondary / secondary special,Commercial associate,Construction
+390,258645,0,180000,450000,31320,21037,1736,Married,M,Managers,Higher education,Commercial associate,Business Entity Type 3
+391,335204,0,157500,450000,35554,8370,747,Single / not married,M,Core staff,Secondary / secondary special,Working,Business Entity Type 2
+392,244560,0,202500,402214,25834,16559,476,Married,M,Drivers,Secondary / secondary special,Working,Self-employed
+393,114815,0,82350,450000,19048,17440,1648,Single / not married,F,Accountants,Lower secondary,Pensioner,XNA
+394,228078,1,135000,745429,31711,12031,188,Married,F,Core staff,Lower secondary,Commercial associate,Self-employed
+395,144357,0,67500,396000,24354,16536,359,Married,F,Medicine staff,Secondary / secondary special,Working,Medicine
+396,150627,1,157500,573408,25389,18416,2345,Married,M,Laborers,Secondary / secondary special,Working,Other
+397,301459,1,103500,407520,32328,9925,2823,Married,F,Core staff,Secondary / secondary special,Working,Kindergarten
+398,427064,0,76500,118512,6048,20144,9154,Separated,F,Managers,Higher education,Working,Postal
+399,162652,0,180000,622413,27544,19240,6972,Married,F,Managers,Higher education,Working,Other
+400,381156,0,67500,260640,19615,22363,1648,Married,F,Accountants,Secondary / secondary special,Pensioner,XNA
+401,289865,0,135000,278460,20947,24228,1648,Separated,F,Accountants,Secondary / secondary special,Pensioner,XNA
+402,156010,0,135000,272578,21663,8391,599,Single / not married,F,Accountants,Secondary / secondary special,Working,Transport: type 2
+403,250713,0,360000,104256,11074,18966,611,Separated,F,Laborers,Higher education,Commercial associate,Industry: type 12
+404,449254,0,135000,568800,24039,19458,1668,Single / not married,F,Sales staff,Secondary / secondary special,Working,Self-employed
+405,333199,0,270000,1350000,46926,10664,1479,Married,M,Laborers,Incomplete higher,Working,Transport: type 2
+406,246488,2,135000,339948,38448,13408,3579,Married,F,Core staff,Higher education,Working,School
+407,264569,1,877500,1057500,103149,18825,1648,Married,M,Accountants,Secondary / secondary special,Pensioner,XNA
+408,272630,2,405000,1030680,57681,14701,1799,Married,F,Sales staff,Higher education,Commercial associate,Business Entity Type 3
+409,223205,0,180000,212427,10975,21122,951,Civil marriage,M,Low-skill Laborers,Secondary / secondary special,Working,Other
+410,102238,1,225000,823882,86512,10655,1244,Married,M,Sales staff,Secondary / secondary special,Commercial associate,Business Entity Type 3
+411,207333,0,67500,260640,20169,23034,1648,Married,F,Accountants,Secondary / secondary special,Pensioner,XNA
+412,228489,1,72000,331920,17077,11395,371,Separated,F,Cooking staff,Secondary / secondary special,Working,Electricity
+413,113992,0,148500,582768,53581,17718,3138,Married,F,Laborers,Secondary / secondary special,Working,Industry: type 3
+414,224856,0,306000,2013840,62640,23149,9026,Married,F,Core staff,Higher education,Commercial associate,School
+415,300723,2,112500,1913148,59382,12560,2974,Married,F,Sales staff,Secondary / secondary special,Working,Business Entity Type 3
+416,275469,0,144000,202500,15997,11945,2587,Married,F,Sales staff,Higher education,Commercial associate,Self-employed
+417,385137,1,337500,315000,24885,12535,3214,Married,M,Drivers,Secondary / secondary special,Working,Agriculture
+418,363850,0,157500,222768,17860,9781,2213,Married,M,Laborers,Secondary / secondary special,Working,Transport: type 2
+419,298286,0,180000,622413,31909,10582,378,Married,M,Accountants,Secondary / secondary special,Working,Other
+420,128343,0,180000,450000,23107,13098,1172,Married,F,Managers,Higher education,Commercial associate,Self-employed
+421,364731,0,180000,479700,50503,12482,2637,Married,M,Sales staff,Secondary / secondary special,Working,Business Entity Type 3
+422,266074,0,157500,526491,23319,22092,1648,Separated,F,Accountants,Secondary / secondary special,Pensioner,XNA
+423,395123,1,360000,675000,53460,10395,1129,Married,M,Managers,Higher education,Commercial associate,Business Entity Type 3
+424,373323,1,135000,130320,13815,15972,5370,Married,M,Laborers,Secondary / secondary special,Working,Business Entity Type 3
+425,402644,1,180000,450000,28786,10652,1717,Married,M,High skill tech staff,Higher education,State servant,Government
+426,288237,2,337500,794173,40680,19941,5039,Married,F,Managers,Secondary / secondary special,Working,Self-employed
+427,323475,0,180000,746280,58963,15757,3423,Married,M,Drivers,Secondary / secondary special,Commercial associate,Transport: type 4
+428,161816,0,162000,454500,26221,21152,1648,Married,F,Accountants,Secondary / secondary special,Pensioner,XNA
+429,250773,1,202500,539100,29376,11894,1732,Married,M,Laborers,Secondary / secondary special,Commercial associate,Transport: type 4
+430,352560,3,157500,1711764,53262,13114,2913,Married,F,Accountants,Secondary / secondary special,Working,Self-employed
+431,148205,0,202500,202500,20880,8794,1128,Married,M,High skill tech staff,Incomplete higher,Commercial associate,Business Entity Type 2
+432,138046,0,135000,693301,37741,14830,2995,Single / not married,M,Laborers,Higher education,Working,Business Entity Type 2
+433,233362,0,225000,166810,19926,18322,1479,Married,M,Laborers,Secondary / secondary special,Working,Electricity
+434,115406,0,90000,547344,24106,16041,4021,Married,F,Laborers,Secondary / secondary special,Working,Postal
+435,102262,0,103500,675000,21775,12943,3421,Married,M,Core staff,Secondary / secondary special,State servant,Medicine
+436,227459,3,135000,1687266,69763,13172,3683,Married,F,Medicine staff,Secondary / secondary special,Working,Medicine
+437,355284,0,135000,136260,10764,8791,1772,Married,F,Waiters/barmen staff,Secondary / secondary special,Working,Self-employed
+438,288530,3,207000,457312,36261,9922,1136,Married,M,Accountants,Secondary / secondary special,Commercial associate,Business Entity Type 3
+439,348989,2,157500,430420,46485,16520,4298,Married,M,Managers,Higher education,Working,Self-employed
+440,290227,0,67500,260640,19615,24284,1648,Married,F,Accountants,Secondary / secondary special,Pensioner,XNA
+441,318536,0,180000,507469,29263,23072,1648,Married,F,Accountants,Secondary / secondary special,Pensioner,XNA
+442,198099,0,135000,630000,32296,18600,3404,Married,M,Laborers,Secondary / secondary special,Working,Construction
+443,219632,0,112500,355968,18198,8135,926,Civil marriage,F,Sales staff,Secondary / secondary special,Working,Self-employed
+444,151529,0,114750,270000,21024,21970,1648,Married,M,Accountants,Secondary / secondary special,Pensioner,XNA
+445,358275,0,135000,798777,48996,17458,1045,Married,F,Sales staff,Secondary / secondary special,Working,Self-employed
+446,249668,0,180000,547344,28075,10278,620,Single / not married,M,Laborers,Secondary / secondary special,Working,Self-employed
+447,354285,2,180000,494550,34551,10901,2518,Single / not married,F,HR staff,Higher education,Working,University
+448,266466,0,180000,446121,53073,8644,1379,Single / not married,M,Accountants,Secondary / secondary special,Commercial associate,Business Entity Type 3
+449,335388,0,112500,271957,32404,12357,2458,Single / not married,M,Laborers,Higher education,Working,Self-employed
+450,290693,0,180000,794173,33646,17349,1756,Married,F,Cleaning staff,Secondary / secondary special,Working,Construction
+451,198004,0,135000,148500,17752,18383,3370,Married,F,Laborers,Secondary / secondary special,Working,Business Entity Type 3
+452,267592,0,81000,331920,16096,22264,1648,Married,F,Accountants,Secondary / secondary special,Pensioner,XNA
+453,127870,0,112500,237024,18855,9331,2086,Married,M,Laborers,Secondary / secondary special,Commercial associate,Other
+454,224337,0,540000,1108098,47079,16549,2011,Single / not married,F,Core staff,Secondary / secondary special,Working,School
+455,139034,1,130500,396000,31284,9796,674,Civil marriage,M,Laborers,Secondary / secondary special,Working,Agriculture
+456,268623,0,225000,1706400,53095,11849,1634,Married,M,Drivers,Secondary / secondary special,Working,Business Entity Type 3
+457,222675,0,225000,335092,35316,17862,4009,Married,M,Accountants,Secondary / secondary special,Commercial associate,Self-employed
+458,177876,0,157500,296280,23539,13224,892,Single / not married,M,Security staff,Secondary / secondary special,Commercial associate,Other
+459,199866,1,112500,139500,7249,11606,1478,Civil marriage,M,Accountants,Secondary / secondary special,State servant,Military
+460,314016,0,135000,312840,20124,10591,1081,Single / not married,F,Accountants,Higher education,Working,Business Entity Type 3
+461,378121,3,85500,256185,23625,11980,1414,Married,F,Laborers,Incomplete higher,Commercial associate,Industry: type 9
+462,175724,4,180000,451102,21829,13660,2882,Married,F,Core staff,Secondary / secondary special,Working,Kindergarten
+463,191869,0,315000,332284,30604,21572,1648,Married,F,Accountants,Secondary / secondary special,Pensioner,XNA
+464,185212,0,432000,1671210,52002,17760,7084,Married,F,Cleaning staff,Secondary / secondary special,Commercial associate,Other
+465,164028,0,180000,254799,16411,8936,745,Single / not married,M,Drivers,Incomplete higher,Working,Business Entity Type 1
+466,247638,0,243000,225000,23053,21474,1648,Civil marriage,F,Accountants,Higher education,Pensioner,XNA
+467,281448,1,270000,1125000,39105,14370,5248,Married,M,Managers,Higher education,State servant,University
+468,274717,1,661500,1024740,49297,13540,921,Married,M,Managers,Higher education,Working,Business Entity Type 2
+469,214644,0,135000,532494,34159,14380,2242,Married,F,Sales staff,Secondary / secondary special,Working,Self-employed
+470,106101,0,72000,454500,19255,23346,1648,Married,M,Accountants,Higher education,Pensioner,XNA
+471,135163,0,315000,450000,19066,20327,1648,Married,M,Accountants,Higher education,Pensioner,XNA
+472,189230,1,472500,478836,34974,15722,1565,Civil marriage,F,Managers,Higher education,Commercial associate,Business Entity Type 3
+473,325890,2,40500,225000,12915,13750,5867,Married,F,Laborers,Lower secondary,Working,Industry: type 11
+474,228813,2,180000,114682,12172,15074,3719,Married,M,Core staff,Secondary / secondary special,Working,Agriculture
+475,413492,0,135000,447453,24403,19743,860,Civil marriage,F,Cooking staff,Secondary / secondary special,Commercial associate,Medicine
+476,233496,0,225000,458235,23395,21622,1648,Single / not married,F,Accountants,Secondary / secondary special,Pensioner,XNA
+477,399092,3,90000,128092,11875,14849,1233,Married,M,Drivers,Secondary / secondary special,Working,Restaurant
+478,203082,0,157500,500490,48888,16266,2520,Married,F,Cooking staff,Secondary / secondary special,Commercial associate,Business Entity Type 3
+479,394918,0,162000,331920,17077,10588,3286,Married,M,Laborers,Secondary / secondary special,Working,Business Entity Type 3
+480,313340,0,225000,272520,17415,10575,2442,Married,F,Accountants,Higher education,Commercial associate,Restaurant
+481,234580,1,135000,679896,52744,10795,1398,Married,F,Accountants,Higher education,Working,Trade: type 3
+482,287089,1,90000,237024,18855,16799,3121,Widow,F,Private service staff,Secondary / secondary special,Working,Self-employed
+483,382147,2,675000,417339,49657,12400,1333,Married,M,Managers,Incomplete higher,Working,Business Entity Type 3
+484,206606,1,121500,172021,20542,11160,2915,Married,F,Core staff,Higher education,Working,Security Ministries
+485,404220,0,216000,601470,32760,19707,619,Married,F,Laborers,Secondary / secondary special,Commercial associate,Business Entity Type 3
+486,333303,0,144000,509400,31162,14152,2427,Separated,F,Security staff,Secondary / secondary special,Working,Security
+487,388218,1,135000,157500,12442,10182,895,Single / not married,F,Core staff,Higher education,Working,Bank
+488,430627,0,108000,104256,11074,8329,1217,Single / not married,F,High skill tech staff,Incomplete higher,Commercial associate,Trade: type 6
+489,305861,0,157500,616527,22275,8318,1579,Single / not married,M,Core staff,Secondary / secondary special,State servant,Police
+490,299847,0,130500,481176,24696,8353,1096,Single / not married,M,Low-skill Laborers,Secondary / secondary special,Working,Agriculture
+491,436365,2,202500,675000,61911,12431,2777,Married,F,Accountants,Higher education,Working,Government
+492,433725,0,67500,675000,24246,22009,1648,Married,F,Accountants,Secondary / secondary special,Pensioner,XNA
+493,354792,0,337500,1024740,55588,11402,885,Married,M,Laborers,Secondary / secondary special,Working,Business Entity Type 3
+494,229610,1,135000,1065681,47668,11510,117,Civil marriage,F,Sales staff,Secondary / secondary special,Working,Self-employed
+495,135755,2,54000,296280,16069,15790,2245,Married,F,Medicine staff,Secondary / secondary special,State servant,Medicine
+496,121279,0,423000,1431000,59184,22654,1648,Married,F,Accountants,Secondary / secondary special,Pensioner,XNA
+497,220186,0,90000,247500,12037,21245,1648,Civil marriage,F,Accountants,Secondary / secondary special,Pensioner,XNA
+498,118650,0,171000,261621,20799,21908,1648,Single / not married,F,Accountants,Secondary / secondary special,Pensioner,XNA
+499,120388,0,675000,1701000,52929,23092,1648,Married,F,Accountants,Secondary / secondary special,Pensioner,XNA
