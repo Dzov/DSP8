@@ -173,6 +173,14 @@ async def get_global_feature_importance():
     return JSONResponse(content=response)
 
 
+@api.get('/features')
+async def get_features():
+    data = get_historical_data()
+    data = data.drop(columns='TARGET')
+
+    return JSONResponse(content=data.columns.tolist())
+
+
 @api.get('/clients/{id}/shap')
 async def get_client_feature_importance(id: int):
     data = get_model_data(id)
