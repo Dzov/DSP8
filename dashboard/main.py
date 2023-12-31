@@ -273,4 +273,4 @@ def update_comparison_graphs(client_id, selected_features):
 
 
 if __name__ == '__main__':
-    app.run_server(debug=True)
+    app.run_server(debug=False)

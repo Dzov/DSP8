@@ -3,8 +3,8 @@ import json
 import numpy as np
 import pandas as pd
 
-# url = "https://pret-a-depenser.azurewebsites.net"
-url = " http://127.0.0.1:8000"
+url = "https://pret-a-depenser.azurewebsites.net"
+# url = " http://127.0.0.1:8000"
 
 
 def get_prediction(client_id):
