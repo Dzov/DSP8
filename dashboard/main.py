@@ -11,6 +11,7 @@ import matplotlib.pyplot as plt
 
 app = Dash(__name__, suppress_callback_exceptions=True,
            external_stylesheets=[dbc.themes.MINTY])
+server = app.server
 
 ############################################################################################
 ##################                       COMPONENTS                     ####################
@@ -44,13 +45,23 @@ placeholder = dbc.Container(
 
 
 def get_client_feature_importance(client_id):
+
     expected_values, features, shap_values = fn.get_client_feature_importance(
         client_id)
 
-    force_plot = shap.force_plot(expected_values[1], shap_values[1], features)
-    force_plot_html = f"<head>{shap.getjs()}</head><body>{force_plot.html()}</body>"
 
-    return html.Iframe(srcDoc=force_plot_html, style={"width": "100%"})
+    shap_df = pd.DataFrame({
+        'feature': features,
+        'shap_value': shap_values[1]
+    })
+
+    shap_df = shap_df.sort_values(by='shap_value', ascending=False)
+
+    fig = px.bar(shap_df, x='shap_value', y='feature', orientation='h',
+                title='SHAP Values (Impact on Model Output)')
+
+    return html.Iframe(srcDoc=fig.to_html(), style={"width": "100%", "height": "500px"})
+    
 
 
 def get_global_importance():
@@ -64,6 +75,7 @@ def get_global_importance():
     return html.Iframe(srcDoc=fig.to_html(), style={"width": "100%", "height": "500px"})
 
 
+@app.callback(Output("loading-comparison", "children"), Input("client-dropdown", "value"))
 def bar_comparison(client_id):
     client_data, neighbours_data = fn.get_client_neighbours(client_id)
 
@@ -209,24 +221,29 @@ def build_client_panel(client_info, prediction):
             className="mb-4",
         ),
         dbc.Row(
-            [
-                dbc.Col(html.H3("Distribution comparison with 20 nearest neighbours"), width=6,
-                        className="offset-3 text-center"),
-                dbc.Col(
-                    dcc.Dropdown(
-                        id='feature-dropdown',
-                        options=[{'label': feature, 'value': feature}
-                                 for feature in fn.get_all_features()],
-                        multi=True,
-                        value=['CREDIT_INCOME_PERCENT'],
-                        placeholder="Select features to compare"
-                    )
-                ),
-                dbc.Col(html.Div(id='comparison-graphs'), width=12),
-                dbc.Col(html.H3("Comparison to mean values of 20 nearest neighbours"), width=6,
-                        className="offset-3 text-center"),
-                dbc.Col(html.Div(bar_comparison(client_info['clientId'])), width=12),
-            ],
+            dcc.Loading(
+                id="loading-comparison",
+                children=[
+                    dbc.Col(html.H3("Distribution comparison with 20 nearest neighbours"), width=6,
+                            className="offset-3 text-center"),
+                    dbc.Col(
+                        dcc.Dropdown(
+                            id='feature-dropdown',
+                            options=[{'label': feature, 'value': feature}
+                                     for feature in fn.get_all_features()],
+                            multi=True,
+                            value=['CREDIT_INCOME_PERCENT'],
+                            placeholder="Select features to compare"
+                        )
+                    ),
+                    dbc.Col(html.Div(id='comparison-graphs'), width=12),
+                    dbc.Col(html.H3("Comparison to mean values of 20 nearest neighbours"), width=6,
+                            className="offset-3 text-center"),
+                    dbc.Col(html.Div(bar_comparison(
+                        client_info['clientId'])), width=12),
+                ],
+                type="circle",
+            ),
             className="mb-4",
         ),
     ],
@@ -242,7 +259,11 @@ def build_client_panel(client_info, prediction):
 app.layout = dbc.Container(
     [
         navbar,
-        html.Div(id='client_panel')
+        dcc.Loading(
+            id="loading-1",
+            type="circle",
+            children=html.Div(id='client_panel')
+        ),
     ],
     fluid=True
 )
