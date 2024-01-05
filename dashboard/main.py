@@ -3,11 +3,8 @@ import dash_bootstrap_components as dbc
 import plotly.express as px
 import pandas as pd
 import functions as fn
-import shap
 import plotly.graph_objs as go
-import numpy as np
 from plotly.subplots import make_subplots
-import matplotlib.pyplot as plt
 
 app = Dash(__name__, suppress_callback_exceptions=True,
            external_stylesheets=[dbc.themes.MINTY])
@@ -32,36 +29,13 @@ navbar = dbc.Navbar(
 placeholder = dbc.Container(
     dbc.Row(
         [
-            dbc.Col(html.H1("Client Profile"), width=6,
-                    className="offset-3 text-center"),
             dbc.Col(html.P(
                 "Select a client ID from the dropdown menu to display information",
                 className="lead",
             ), width=6, className="offset-3 text-center"),
         ]
     ),
-    style={'margin-top': '20px'}
 )
-
-
-def get_client_feature_importance(client_id):
-
-    expected_values, features, shap_values = fn.get_client_feature_importance(
-        client_id)
-
-
-    shap_df = pd.DataFrame({
-        'feature': features,
-        'shap_value': shap_values[1]
-    })
-
-    shap_df = shap_df.sort_values(by='shap_value', ascending=False)
-
-    fig = px.bar(shap_df, x='shap_value', y='feature', orientation='h',
-                title='SHAP Values (Impact on Model Output)')
-
-    return html.Iframe(srcDoc=fig.to_html(), style={"width": "100%", "height": "500px"})
-    
 
 
 def get_global_importance():
@@ -72,10 +46,28 @@ def get_global_importance():
     fig = px.bar(df_plot, x='Importance', y='Feature', orientation='h',
                  labels={'Importance': 'Feature Importance'})
 
-    return html.Iframe(srcDoc=fig.to_html(), style={"width": "100%", "height": "500px"})
+    return html.Iframe(srcDoc=fig.to_html(), style={"width": "100%", "height": "470px"})
 
 
-@app.callback(Output("loading-comparison", "children"), Input("client-dropdown", "value"))
+global_importance = get_global_importance()
+
+
+def get_client_feature_importance(client_id):
+    expected_values, features, shap_values = fn.get_client_feature_importance(
+        client_id)
+
+    shap_df = pd.DataFrame({
+        'feature': features,
+        'shap_value': shap_values[1]
+    })
+
+    shap_df = shap_df.sort_values(by='shap_value', ascending=False)
+
+    fig = px.bar(shap_df, x='shap_value', y='feature', orientation='h')
+
+    return html.Iframe(srcDoc=fig.to_html(), style={"width": "100%", "height": "470px"})
+
+
 def bar_comparison(client_id):
     client_data, neighbours_data = fn.get_client_neighbours(client_id)
 
@@ -98,7 +90,7 @@ def bar_comparison(client_id):
                       xaxis=dict(title='Comparison'),
                       showlegend=True)
 
-    return html.Iframe(srcDoc=fig.to_html(), style={"width": "100%", "height": "500px"})
+    return html.Iframe(srcDoc=fig.to_html(), style={"width": "100%", "height": "480px"})
 
 
 def build_comparison_graphs(client_id, selected_features):
@@ -116,8 +108,13 @@ def build_comparison_graphs(client_id, selected_features):
         fig.add_shape(type="line", x0=client_value, y0=0, x1=client_value,
                       y1=1, line=dict(color="#FFA88F",), row=i, col=1)
 
-    fig.update_layout(height=400 * len(selected_features), showlegend=False)
-    return html.Iframe(srcDoc=fig.to_html(), style={"width": "100%", "height": "500px"})
+    fig.update_layout(height=300, showlegend=False)
+    return html.Iframe(srcDoc=fig.to_html(), style={"width": "100%", "height": "350px"})
+
+
+############################################################################################
+##################                       PANELS                         ####################
+############################################################################################
 
 
 def build_client_panel(client_info, prediction):
@@ -190,83 +187,106 @@ def build_client_panel(client_info, prediction):
     return dbc.Container([
         dbc.Row(
             [
-                dbc.Col(html.H1("Client Profile"), width=6,
-                        className="offset-3 text-center"),
-            ], style={'margin-bottom': '20px'}
-        ),
-        dbc.Row(
-            [
                 dbc.Col(dbc.Card(general, color="primary", outline=True)),
                 dbc.Col(dbc.Card(financial, color="secondary", outline=True)),
                 dbc.Col(dbc.Card(loan, color="info", outline=True),  width=2),
             ],
             className="mb-4",
         ),
-        dbc.Row(
-            [
-                dbc.Col(html.H2("Local Feature Importance"), width=6,
-                        className="offset-3 text-center"),
-                dbc.Col(get_client_feature_importance(
-                    client_info['clientId']), width=12),
+    ]
+    )
 
-            ],
-            className="mb-4", style={'margin-top': '40px'}
+
+def build_feature_importance_panel(local_importance_graph):
+    return dbc.Container([
+        dbc.Row([
+            html.H4("Local Feature Importance Using SHAP Values"),
+            local_importance_graph
+        ],
+            className="mb-4"
         ),
-        dbc.Row(
-            [
-                dbc.Col(html.H2("Global Feature Importance"), width=6,
-                        className="offset-3 text-center"),
-                dbc.Col(get_global_importance(), width=12),
-            ],
+        dbc.Row([
+            html.H4("Global Feature Importance"),
+            global_importance
+        ],
             className="mb-4",
         ),
+    ]
+    )
+
+
+def build_comparison_panel(features, comparison_graph):
+    return dbc.Container([
+        dbc.Row(html.H4("Distribution comparison with 20 nearest neighbours"),),
         dbc.Row(
-            dcc.Loading(
-                id="loading-comparison",
-                children=[
-                    dbc.Col(html.H3("Distribution comparison with 20 nearest neighbours"), width=6,
-                            className="offset-3 text-center"),
-                    dbc.Col(
-                        dcc.Dropdown(
-                            id='feature-dropdown',
-                            options=[{'label': feature, 'value': feature}
-                                     for feature in fn.get_all_features()],
-                            multi=True,
-                            value=['CREDIT_INCOME_PERCENT'],
-                            placeholder="Select features to compare"
-                        )
-                    ),
-                    dbc.Col(html.Div(id='comparison-graphs'), width=12),
-                    dbc.Col(html.H3("Comparison to mean values of 20 nearest neighbours"), width=6,
-                            className="offset-3 text-center"),
-                    dbc.Col(html.Div(bar_comparison(
-                        client_info['clientId'])), width=12),
-                ],
-                type="circle",
-            ),
-            className="mb-4",
+            dcc.Dropdown(
+                id='feature-dropdown',
+                options=[{'label': feature, 'value': feature}
+                         for feature in features],
+                multi=True,
+                value=['CREDIT_INCOME_PERCENT'],
+                placeholder="Select features to compare"
+            )
         ),
-    ],
-        style={'margin-top': '20px'}
+        dbc.Row(html.Div(id='comparison-graphs')),
+        dbc.Row(html.H4("Comparison to mean values of 20 nearest neighbours")),
+        dbc.Row(html.Div(comparison_graph)),
+    ]
     )
 
 
 ############################################################################################
 ##################                         LAYOUT                       ####################
 ############################################################################################
-
-
 app.layout = dbc.Container(
     [
         navbar,
-        dcc.Loading(
-            id="loading-1",
-            type="circle",
-            children=html.Div(id='client_panel')
-        ),
+        dbc.Row(dbc.Col(html.H1("Client Profile"), width=6, style={'margin-top': '40px', 'margin-bottom': '20px'},
+                        className="offset-3 text-center"),),
+        dbc.Row(
+            dcc.Loading(
+                id="loading-1",
+                type="circle",
+                children=html.Div(id='client_panel'),
+            ),),
+        dbc.Row(id='importance_title', style={'margin-bottom': '40px'}),
+        dbc.Row(
+            dcc.Loading(
+                id="loading-2",
+                type="circle",
+                children=html.Div(id='feature_importance_panel'),
+
+            ),),
+        dbc.Row(id='comparison_title', style={'margin-bottom': '40px'}),
+        dbc.Row(
+            dcc.Loading(
+                id="loading-3",
+                type="circle",
+                children=html.Div(id='comparison_panel'),
+            ),),
     ],
     fluid=True
 )
+
+
+############################################################################################
+##################                         CALLBACKS                       #################
+############################################################################################
+
+@app.callback(
+    Output('importance_title', 'children'),
+    Output('comparison_title', 'children'),
+    Input('client-dropdown', 'value'),
+)
+def get_titles(client_id):
+    if client_id is None:
+        return html.Div(), html.Div()
+    importance = dbc.Col(html.H2("Feature Importance"), width=6, style={
+                         'margin-top': '40px'}, className="offset-3 text-center")
+    comparison = dbc.Col(html.H2("Client Comparison"), width=6, style={
+                         'margin-top': '40px'}, className="offset-3 text-center")
+
+    return importance, comparison
 
 
 @app.callback(
@@ -280,6 +300,31 @@ def get_client_info(client_id):
     client_prediction = fn.get_prediction(client_id)
 
     return build_client_panel(client_info, client_prediction)
+
+
+@app.callback(
+    Output('feature_importance_panel', 'children'),
+    Input('client-dropdown', 'value'),
+)
+def get_feature_importance(client_id):
+    if client_id is None:
+        return
+    local_importance = get_client_feature_importance(client_id)
+
+    return build_feature_importance_panel(local_importance)
+
+
+@app.callback(
+    Output('comparison_panel', 'children'),
+    Input('client-dropdown', 'value'),
+)
+def get_comparison_information(client_id):
+    if client_id is None:
+        return
+    features = fn.get_all_features()
+    comparison_graph = bar_comparison(client_id)
+
+    return build_comparison_panel(features, comparison_graph)
 
 
 @app.callback(
