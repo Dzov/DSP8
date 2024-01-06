@@ -9,6 +9,7 @@ from plotly.subplots import make_subplots
 
 app = Dash(__name__, suppress_callback_exceptions=True,
            external_stylesheets=[dbc.themes.MINTY])
+app.title = 'Dashboard Prêt à Dépenser'
 server = app.server
 
 ############################################################################################
@@ -17,7 +18,7 @@ server = app.server
 
 navbar = dbc.Navbar(
     dbc.Container(
-        [dbc.Col(html.Img(src=app.get_relative_path('/assets/logo.png'), height="70px"), md=10),
+        [dbc.Col(html.Img(src=app.get_relative_path('/assets/logo.png'), height="70px", alt='Logo Prêt à Dépenser'), md=10),
          dbc.Col(dcc.Dropdown(fn.get_clients(), placeholder='Select a client',
                               id='client-dropdown', style={'width': '100%'})),
 
@@ -64,7 +65,8 @@ def get_client_feature_importance(client_id):
 
     shap_df = shap_df.sort_values(by='shap_value', ascending=False)
 
-    fig = px.bar(shap_df, x='shap_value', y='feature', orientation='h')
+    fig = px.bar(shap_df, x='shap_value', y='feature', orientation='h', labels={
+                 'shap_value': 'SHAP Value', 'feature': 'Feature'})
 
     return html.Iframe(srcDoc=fig.to_html(), style={"width": "100%", "height": "470px"})
 
@@ -102,14 +104,24 @@ def build_comparison_graphs(client_id, selected_features):
     for i, feature in enumerate(selected_features, start=1):
         client_value = client_data[feature].values[0]
         neighbours_values = neighbours_data[feature]
-        counts = np.histogram(neighbours_values, bins='auto', density=True)[0].max()
+        counts = np.histogram(
+            neighbours_values, bins='auto', density=True)[0].max()
 
         fig.add_shape(type="line", x0=client_value, y0=0, x1=client_value,
                       y1=counts, line=dict(color="#FFA88F",), row=i, col=1)
 
+        fig.add_trace(go.Scatter(
+            x=[client_value], y=[counts / 2],
+            text=[f"Client Value: {client_value:.2f}"],
+            mode="markers",
+            marker=dict(color="#FFA88F", size=10, opacity=0),
+            hoverinfo="text",
+            showlegend=False
+        ), row=i, col=1)
+
         fig.add_trace(go.Histogram(x=neighbours_values, histnorm='probability density',
                       name=f'{feature} - Neighbours'), row=i, col=1)
-        fig.update_xaxes(title_text="Feature Value", row=i, col=1)  
+        fig.update_xaxes(title_text="Feature Value", row=i, col=1)
         fig.update_yaxes(title_text="Density", row=i, col=1)
 
     fig.update_layout(height=300 * len(selected_features), showlegend=False)
@@ -205,13 +217,13 @@ def build_feature_importance_panel(local_importance_graph):
     return dbc.Container([
         dbc.Row([
             html.H4("Local Feature Importance Using SHAP Values"),
-            local_importance_graph
+            html.Div(local_importance_graph, role='graph')
         ],
-            className="mb-4"
+            className="mb-4",
         ),
         dbc.Row([
             html.H4("Global Feature Importance"),
-            global_importance
+            html.Div(global_importance, role="graph")
         ],
             className="mb-4",
         ),
@@ -221,19 +233,20 @@ def build_feature_importance_panel(local_importance_graph):
 
 def build_comparison_panel(features, comparison_graph):
     return dbc.Container([
-        dbc.Row(html.H4("Distribution comparison with 20 nearest neighbours that were granted a loan"),),
+        dbc.Row(html.H4(
+            "Distribution comparison with 20 nearest neighbours that were granted a loan"),),
         dbc.Row(
             dcc.Dropdown(
                 id='feature-dropdown',
                 options=[{'label': feature, 'value': feature}
                          for feature in features],
                 multi=True,
-                value=['CREDIT_INCOME_PERCENT'],
-                placeholder="Select features to compare"
+                value=['CREDIT_INCOME_PERCENT']
             )
         ),
         dbc.Row(html.Div(id='comparison-graphs')),
-        dbc.Row(html.H4("Comparison to mean values of 20 nearest neighbours that were granted a loan")),
+        dbc.Row(html.H4(
+            "Comparison to mean values of 20 nearest neighbours that were granted a loan")),
         dbc.Row(html.Div(comparison_graph)),
     ]
     )
