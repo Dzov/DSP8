@@ -64,7 +64,7 @@ def get_historical_data():
 
 def get_neighbours(client_id: int):
     data = get_historical_data()
-    data = data[data['TARGET'] == 1].drop(columns='TARGET')
+    data = data[data['TARGET'] == 0].drop(columns='TARGET')
     x = data.values
 
     client_data = get_model_data(client_id)

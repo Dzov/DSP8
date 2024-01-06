@@ -2,6 +2,7 @@ from dash import Dash, html, dcc, callback, Output, Input
 import dash_bootstrap_components as dbc
 import plotly.express as px
 import pandas as pd
+import numpy as np
 import functions as fn
 import plotly.graph_objs as go
 from plotly.subplots import make_subplots
@@ -101,14 +102,17 @@ def build_comparison_graphs(client_id, selected_features):
     for i, feature in enumerate(selected_features, start=1):
         client_value = client_data[feature].values[0]
         neighbours_values = neighbours_data[feature]
+        counts = np.histogram(neighbours_values, bins='auto', density=True)[0].max()
+
+        fig.add_shape(type="line", x0=client_value, y0=0, x1=client_value,
+                      y1=counts, line=dict(color="#FFA88F",), row=i, col=1)
 
         fig.add_trace(go.Histogram(x=neighbours_values, histnorm='probability density',
                       name=f'{feature} - Neighbours'), row=i, col=1)
+        fig.update_xaxes(title_text="Feature Value", row=i, col=1)  
+        fig.update_yaxes(title_text="Density", row=i, col=1)
 
-        fig.add_shape(type="line", x0=client_value, y0=0, x1=client_value,
-                      y1=1, line=dict(color="#FFA88F",), row=i, col=1)
-
-    fig.update_layout(height=300, showlegend=False)
+    fig.update_layout(height=300 * len(selected_features), showlegend=False)
     return html.Iframe(srcDoc=fig.to_html(), style={"width": "100%", "height": "350px"})
 
 
@@ -217,7 +221,7 @@ def build_feature_importance_panel(local_importance_graph):
 
 def build_comparison_panel(features, comparison_graph):
     return dbc.Container([
-        dbc.Row(html.H4("Distribution comparison with 20 nearest neighbours"),),
+        dbc.Row(html.H4("Distribution comparison with 20 nearest neighbours that were granted a loan"),),
         dbc.Row(
             dcc.Dropdown(
                 id='feature-dropdown',
@@ -229,7 +233,7 @@ def build_comparison_panel(features, comparison_graph):
             )
         ),
         dbc.Row(html.Div(id='comparison-graphs')),
-        dbc.Row(html.H4("Comparison to mean values of 20 nearest neighbours")),
+        dbc.Row(html.H4("Comparison to mean values of 20 nearest neighbours that were granted a loan")),
         dbc.Row(html.Div(comparison_graph)),
     ]
     )
