@@ -7,7 +7,7 @@ import pandas as pd
 import numpy as np
 import shap
 from sklearn.neighbors import NearestNeighbors
-
+print(shap.__version__)
 api = FastAPI()
 
 
@@ -127,7 +127,6 @@ def get_feature_importance():
         1, -1), columns=data.columns).T.sort_values(by=0, ascending=False)
     return importance.head(25)
 
-
 #################### ENDPOINTS ####################
 
 @api.get('/')
@@ -184,11 +183,9 @@ async def get_features():
 @api.get('/clients/{id}/shap')
 async def get_client_feature_importance(id: int):
     data = get_model_data(id)
-    print(data)
     explainer = shap.TreeExplainer(get_model().steps[-1][1])
     shap_values = pd.Series(list(explainer.shap_values(data.values)))
     expected_values = explainer.expected_value
-    print(pd.Series(list(shap_values)))
     response = {
         "shap_values": shap_values.to_json(),
         "expected_values": expected_values,
