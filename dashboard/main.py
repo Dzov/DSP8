@@ -9,12 +9,12 @@ from plotly.subplots import make_subplots
 
 app = Dash(__name__, suppress_callback_exceptions=True,
            external_stylesheets=[dbc.themes.MINTY])
-app.title = 'Dashboard Prêt à Dépenser'
 server = app.server
 
 ############################################################################################
 ##################                       COMPONENTS                     ####################
 ############################################################################################
+app.title = 'Dashboard Prêt à Dépenser'
 
 navbar = dbc.Navbar(
     dbc.Container(
@@ -49,9 +49,6 @@ def get_global_importance():
                  labels={'Importance': 'Feature Importance'})
 
     return html.Iframe(srcDoc=fig.to_html(), style={"width": "100%", "height": "470px"})
-
-
-global_importance = get_global_importance()
 
 
 def get_client_feature_importance(client_id):
@@ -213,28 +210,17 @@ def build_client_panel(client_info, prediction):
     )
 
 
-def build_feature_importance_panel(local_importance_graph):
-    return dbc.Container([
-        dbc.Row([
-            html.H4("Local Feature Importance Using SHAP Values"),
-            html.Div(local_importance_graph, role='graph')
-        ],
-            className="mb-4",
-        ),
-        dbc.Row([
-            html.H4("Global Feature Importance"),
-            html.Div(global_importance, role="graph")
-        ],
-            className="mb-4",
-        ),
-    ]
-    )
+def build_local_feature_importance_panel(local_importance_graph):
+    return dbc.Row(html.Div(local_importance_graph,
+                            role='graph'), className="mb-4",)
 
 
-def build_comparison_panel(features, comparison_graph):
+def build_global_feature_importance_panel(global_importance):
+    return dbc.Row(html.Div(global_importance, role="graph"), className="mb-4",)
+
+
+def build_comparison_distribution_graph(features):
     return dbc.Container([
-        dbc.Row(html.H4(
-            "Distribution comparison with 20 nearest neighbours that were granted a loan"),),
         dbc.Row(
             dcc.Dropdown(
                 id='feature-dropdown',
@@ -245,11 +231,11 @@ def build_comparison_panel(features, comparison_graph):
             )
         ),
         dbc.Row(html.Div(id='comparison-graphs')),
-        dbc.Row(html.H4(
-            "Comparison to mean values of 20 nearest neighbours that were granted a loan")),
-        dbc.Row(html.Div(comparison_graph)),
-    ]
-    )
+    ])
+
+
+def build_mean_comparison_graph(comparison_graph):
+    return dbc.Row(html.Div(comparison_graph))
 
 
 ############################################################################################
@@ -266,21 +252,37 @@ app.layout = dbc.Container(
                 type="circle",
                 children=html.Div(id='client_panel'),
             ),),
-        dbc.Row(id='importance_title', style={'margin-bottom': '40px'}),
+        dbc.Row(id='importance_title'),
+        dbc.Row(id='local_importance_title'),
         dbc.Row(
             dcc.Loading(
                 id="loading-2",
                 type="circle",
-                children=html.Div(id='feature_importance_panel'),
+                children=html.Div(id='local_feature_importance_graph'),
 
             ),),
-        dbc.Row(id='comparison_title', style={'margin-bottom': '40px'}),
+        dbc.Row(id='global_importance'),
         dbc.Row(
             dcc.Loading(
                 id="loading-3",
                 type="circle",
-                children=html.Div(id='comparison_panel'),
+                children=html.Div(id='global_feature_importance_graph'),
+
             ),),
+        dbc.Row(id='comparison_title'),
+        dbc.Row(id='distribution_title'),
+        dbc.Row(
+            dcc.Loading(
+                id="loading-4",
+                type="circle",
+                children=html.Div(id='distribution_graph'),
+            ),),
+        dbc.Row(id='mean_title'),
+        dbc.Row(
+            dcc.Loading(
+                id="loading-5",
+                type="circle",
+                children=html.Div(id='mean_graph'),))
     ],
     fluid=True
 )
@@ -292,18 +294,40 @@ app.layout = dbc.Container(
 
 @app.callback(
     Output('importance_title', 'children'),
-    Output('comparison_title', 'children'),
+    Output('local_importance_title', 'children'),
+    Output('global_importance', 'children'),
     Input('client-dropdown', 'value'),
 )
-def get_titles(client_id):
+def get_importance_titles(client_id):
     if client_id is None:
-        return html.Div(), html.Div()
+        return html.Div(), html.Div(), html.Div()
     importance = dbc.Col(html.H2("Feature Importance"), width=6, style={
-                         'margin-top': '40px'}, className="offset-3 text-center")
-    comparison = dbc.Col(html.H2("Client Comparison"), width=6, style={
-                         'margin-top': '40px'}, className="offset-3 text-center")
+        'margin-top': '40px', 'margin-bottom': '40px'}, className="offset-3 text-center")
+    local_importance = dbc.Col(
+        html.H4("Local Feature Importance Using SHAP Values"))
+    global_importance = dbc.Col(html.H4("Global Feature Importance"))
 
-    return importance, comparison
+    return importance, local_importance, global_importance
+
+
+@app.callback(
+    Output('comparison_title', 'children'),
+    Output('distribution_title', 'children'),
+    Output('mean_title', 'children'),
+    Input('client-dropdown', 'value'),
+)
+def get_comparison_titles(client_id):
+    if client_id is None:
+        return html.Div(), html.Div(), html.Div()
+    comparison = dbc.Col(html.H2("Client Comparison"), width=6, style={
+                         'margin-top': '40px', 'margin-bottom': '40px'}, className="offset-3 text-center")
+    distribution = html.H4(
+        "Distribution comparison with 20 nearest neighbours that were granted a loan")
+
+    mean = html.H4(
+        "Comparison to mean values of 20 nearest neighbours that were granted a loan")
+
+    return comparison, distribution, mean
 
 
 @app.callback(
@@ -320,28 +344,47 @@ def get_client_info(client_id):
 
 
 @app.callback(
-    Output('feature_importance_panel', 'children'),
+    Output('local_feature_importance_graph', 'children'),
     Input('client-dropdown', 'value'),
 )
-def get_feature_importance(client_id):
+def get_local_feature_importance(client_id):
     if client_id is None:
         return
     local_importance = get_client_feature_importance(client_id)
 
-    return build_feature_importance_panel(local_importance)
+    return build_local_feature_importance_panel(local_importance)
 
 
 @app.callback(
-    Output('comparison_panel', 'children'),
+    Output('global_feature_importance_graph', 'children'),
+    Input('client-dropdown', 'value'),
+)
+def get_global_feature_importance(client_id):
+    global_importance = get_global_importance()
+    if client_id is None:
+        return
+    return build_global_feature_importance_panel(global_importance)
+
+
+@app.callback(
+    Output('mean_graph', 'children'),
     Input('client-dropdown', 'value'),
 )
 def get_comparison_information(client_id):
     if client_id is None:
         return
-    features = fn.get_all_features()
-    comparison_graph = bar_comparison(client_id)
 
-    return build_comparison_panel(features, comparison_graph)
+    return build_mean_comparison_graph(bar_comparison(client_id))
+
+@app.callback(
+    Output('distribution_graph', 'children'),
+    Input('client-dropdown', 'value'),
+)
+def get_comparison_information(client_id):
+    if client_id is None:
+        return
+
+    return build_comparison_distribution_graph(fn.get_all_features())
 
 
 @app.callback(
